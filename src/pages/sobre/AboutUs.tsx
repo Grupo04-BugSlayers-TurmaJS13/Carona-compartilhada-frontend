@@ -188,8 +188,7 @@ export default function AboutUs() {
                     display: "flex",
                     justifyContent: "center",
                   }}
-                >
-                </motion.div>
+                ></motion.div>
 
                 <motion.h1
                   custom={0.16}
