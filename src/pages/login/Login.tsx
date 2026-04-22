@@ -54,9 +54,9 @@ function Login() {
           <div className="bg-(color--background-card) text-white p-6 md:p-10 flex flex-col justify-between">
             <div className="flex flex-col">
               <img
-                src="https://placehold.co/600x400"
+                src="https://ik.imagekit.io/bugslayers/bip%20bip/bipbip-logo.png"
                 alt="logo-site"
-                className="w-40 md:w-55 h-auto items-center justify-center my-6 mx-auto drop-shadow-md drop-shadow-primary"
+                className="w-40 md:w-55 h-auto items-center justify-center my-6 mx-auto "
               />
               <h1 className="text-2xl md:text-3xl font-heading font-semibold leading-snug">
                 Programe sua rotina através de{" "}
@@ -134,7 +134,7 @@ function Login() {
                   value={usuarioLogin.senha}
                   onChange={atualizarEstado}
                   placeholder="••••••"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                 />
               </div>
 
@@ -179,9 +179,9 @@ function Login() {
                   Não tem uma conta?{" "}
                   <Link
                     to="/cadastrar"
-                    className="text-(--color-primary) cursor-pointer"
+                    className=" cursor-pointer"
                   >
-                    <p className="text-xs text-center text-(--color-primary) "> Cadastre-se grátis</p>
+                    <span className="text-(--color-primary)">Cadastre-se grátis</span>
                   </Link>
                 </p>
               
