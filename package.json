@@ -13,11 +13,7 @@
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/vite": "^4.0.0",
     "axios": "^1.15.2",
-<<<<<<< HEAD
-    "embla-carousel-react": "^8.6.0",
-=======
     "framer-motion": "^12.38.0",
->>>>>>> origin/login_Cadastro_Perfil
     "lucide-react": "^1.8.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",

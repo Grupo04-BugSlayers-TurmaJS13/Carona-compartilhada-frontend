@@ -28,19 +28,13 @@
   --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
 }
 
-/* *,
+
 *::before,
 *::after {
-  box-sizing: border-box;
-<<<<<<< HEAD
+  /* box-sizing: border-box; */
   /* margin: 0; */
   /* padding: 0; */
 }
-=======
-  margin: 0;
-  padding: 0;
-} */
->>>>>>> origin/login_Cadastro_Perfil
 
 html {
   scroll-behavior: smooth;
