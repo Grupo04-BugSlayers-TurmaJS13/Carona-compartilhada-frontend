@@ -10,13 +10,13 @@ function App() {
     <AuthProvider>
       <ToastContainer />
       <BrowserRouter>
-      <div className="">
+      
         <Routes>
           
           <Route path="/" element={<Login />} />
           <Route path="/teste" element={<Teste />} />
         </Routes>
-        </div>
+        
       </BrowserRouter>
     </AuthProvider>
   );
