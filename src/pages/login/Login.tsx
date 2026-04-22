@@ -8,7 +8,6 @@ import {
 import { FaExclamationTriangle } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { LuTimerReset } from "react-icons/lu";
-import { IoMdTrendingUp } from "react-icons/io";
 import { TbNotes } from "react-icons/tb";
 import { PiPlantLight } from "react-icons/pi";
 import type UsuarioLogin from "../../models/UsuarioLogin";
@@ -31,7 +30,7 @@ function Login() {
 
   useEffect(() => {
     if (usuario.token !== "") {
-      navigate("/teste");
+      navigate("/perfil");
     }
   }, [usuario]);
 
@@ -50,7 +49,7 @@ function Login() {
   return (
     <>
       <section className="min-h-screen flex items-center justify-center bg-(color--background)  font-sans py-25 mt-10 px-6">
-        <article className="max-w-225 min-h-130 rounded-lg overflow-hidden shadow-(--shadow-soft) border-1 border-(--color-primary) grid grid-cols-1 md:grid-cols-2">
+        <article className="max-w-225 min-h-130 rounded-lg overflow-hidden shadow-(--shadow-soft) border-primary grid grid-cols-1 md:grid-cols-2">
           <div className="bg-(color--background-card) text-white p-6 md:p-10 flex flex-col justify-between">
             <div className="flex flex-col">
               <img
@@ -74,21 +73,21 @@ function Login() {
               <p className="flex gap-2 items-center">
                 <LuTimerReset
                   size={35}
-                  className="text-[var(--color-primary)] border border-[var(--color-primary)] rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Economia de tempo e praticidade
               </p>
               <p className="flex gap-2 items-center">
                 <TbNotes
                   size={35}
-                  className="text-[var(--color-primary)] border border-[var(--color-primary)] rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Histórico de viagens
               </p>
               <p className="flex gap-2 items-center">
                 <PiPlantLight
                   size={35}
-                  className="text-[var(--color-primary)] border border-[var(--color-primary)] rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Sustentabilidade e economia compartilhada
               </p>
@@ -96,7 +95,7 @@ function Login() {
           </div>
 
           <div className="bg- p-6 md:p-10 flex flex-col justify-center w-full bg-green-950">
-            <h2 className="text-2xl font-heading font-semibold text-[var(--color-primary)]">
+            <h2 className="text-2xl font-heading font-semibold text-primary">
               Bem-vindo de volta
             </h2>
             <p className="text-sm  mb-6">Acesse sua conta para continuar</p>
@@ -116,7 +115,7 @@ function Login() {
                   value={usuarioLogin.usuario}
                   onChange={atualizarEstado}
                   placeholder="seu@email.com"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                  className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-primary"
                 />
                 {usuarioLogin.usuario?.length > 0 && !emailValido && (
                   <span className="text-red-400 text-xs flex items-center p-2 gap-2">
@@ -134,7 +133,7 @@ function Login() {
                   value={usuarioLogin.senha}
                   onChange={atualizarEstado}
                   placeholder="••••••"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
+                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
                 />
               </div>
 
@@ -181,7 +180,7 @@ function Login() {
                     to="/cadastrar"
                     className=" cursor-pointer"
                   >
-                    <span className="text-(--color-primary)">Cadastre-se grátis</span>
+                    <span className="text-primary">Cadastre-se grátis</span>
                   </Link>
                 </p>
               
