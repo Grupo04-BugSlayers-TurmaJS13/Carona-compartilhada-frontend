@@ -1,28 +1,26 @@
-import { ToastContainer } from "react-toastify";
-import Login from "./pages/login/Login";
-import { AuthProvider } from "./contexts/AuthContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Teste from "./pages/teste";
+import AboutProject from "./pages/sobre/AboutProject";
+import AboutUs from "./pages/sobre/AboutUs";
+import Footer from "./components/footer/Footer";
+import Navbar from "./components/navbar/Navbar";
+import Login from "./pages/login/Login";
 import Home from "./pages/home/Home";
 import ListarVeiculos from "./components/veiculos/listarveiculos/ListarVeiculos";
 
 function App() {
   return (
-    <AuthProvider>
-      <ToastContainer />
-      <BrowserRouter>
-      
-        <Routes>
-          
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/listarveiculo" element={<ListarVeiculos />} />
-          <Route path="/teste" element={<Teste />} />
-        </Routes>
-        
-      </BrowserRouter>
-    </AuthProvider>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/listarveiculo" element={<ListarVeiculos />} />
+        <Route path="/sobre" element={<AboutProject />} />
+        <Route path="/sobrenos" element={<AboutUs />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App
