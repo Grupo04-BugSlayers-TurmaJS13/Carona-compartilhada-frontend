@@ -1,6 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { createContext, useState, type ReactNode } from "react";
+<<<<<<< HEAD
+=======
+import type UsuarioLogin from "../models/UsuarioLogin";
+import { login } from "../services/Service";
+import { ToastAlerta } from "../utils/ToastAlerta";
+
+
+>>>>>>> origin/login_Cadastro_Perfil
 
 interface AuthContextProps {
   usuario: UsuarioLogin
