@@ -124,7 +124,7 @@ function Login() {
                   value={usuarioLogin.usuario}
                   onChange={atualizarEstado}
                   placeholder="seu@email.com"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
                 {usuarioLogin.usuario?.length > 0 && !emailValido && (
                   <span className="text-red-400 text-xs flex items-center p-2 gap-2">
@@ -142,7 +142,7 @@ function Login() {
                   value={usuarioLogin.senha}
                   onChange={atualizarEstado}
                   placeholder="••••••"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
+                  className="w-full mt-1 p-3 rounded-lg text-black bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
               </div>
 
@@ -150,7 +150,7 @@ function Login() {
                 Esqueceu a senha?
               </div>
               <div className="flex items-center justify-center">
-                <div className=" flex  justify-center items-center border rounded-2xl w-40 h-15  ">
+                <div className=" flex  justify-center items-center border rounded-2xl w-40 h-15 hover:bg-(--color-primary-dark) hover:text-black transition">
                   <motion.button
                     type="submit"
                     whileHover={{ scale: 1.05 }}

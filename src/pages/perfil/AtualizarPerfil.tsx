@@ -93,7 +93,7 @@ function AtualizarPerfil() {
 
         if (confirmarSenha === user.senha && user.senha.length >= 8) {
             try {
-                await atualizar(`/usuarios/${user.id}`, user, setUser, {
+                await atualizar(`/usuarios/atualizar`, user, setUser, {
                     headers: {
                         Authorization: token,
                     },
