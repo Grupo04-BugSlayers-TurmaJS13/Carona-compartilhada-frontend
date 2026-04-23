@@ -23,7 +23,7 @@ function Diferencial() {
         <section className="w-full px-6 md:px-16 bg-[var(--color-background)]">
 
             <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)]">
+                <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     O Nosso diferencial
                 </h2>
                 <p className="text-[var(--color-foreground-muted)] mt-3">
@@ -41,11 +41,11 @@ function Diferencial() {
                             {item.icon}
                         </div>
 
-                        <h3 className="text-lg font-semibold text-[var(--color-primary)] mb-2">
+                        <h3 className="rf-lg font-semibold text-[var(--color-primary)] mb-2">
                             {item.title}
                         </h3>
 
-                        <p className="text-sm text-[var(--color-foreground-muted)] leading-relaxed">
+                        <p className="rf-sm text-[var(--color-foreground-muted)] leading-relaxed">
                             {item.description}
                         </p>
 

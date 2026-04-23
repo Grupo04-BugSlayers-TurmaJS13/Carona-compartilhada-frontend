@@ -21,7 +21,7 @@ function Avaliacoes() {
         <section className="w-full px-6 md:px-16 bg-[var(--color-background)]">
 
             <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)]">
+                <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     O que estão dizendo
                 </h2>
                 <p className="text-[var(--color-foreground-muted)] mt-3">
@@ -36,11 +36,11 @@ function Avaliacoes() {
                         rounded-2xl p-8 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-bip)] hover:-translate-y-2
                         transition duration-300">
 
-                        <p className="text-[var(--color-foreground-high)] text-base italic mb-6">
+                        <p className="text-[var(--color-foreground-high)] rf-base italic mb-6">
                             “{item.texto}”
                         </p>
 
-                        <div className="text-sm text-[var(--color-primary-dark)]">
+                        <div className="rf-sm text-[var(--color-primary-dark)]">
                             — {item.nome}, {item.local}
                         </div>
 

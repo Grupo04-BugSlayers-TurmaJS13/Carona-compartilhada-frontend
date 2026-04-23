@@ -89,11 +89,11 @@ export default function Carousel() {
                         <div className="absolute inset-0 flex items-center px-10 pt-40">
                             <div className="w-full md:w-1/3 pl-6 md:pl-16 lg:pl-24">
 
-                                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 drop-shadow-lg ">
+                                <h2 className="rf-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 drop-shadow-lg ">
                                     {slide.title}
                                 </h2>
 
-                                <p className="text-gray-200 font-medium text-md md:text-base lg:text-lg mb-4 drop-shadow">
+                                <p className="text-gray-200 font-medium text-md md:rf-base lg:rf-lg mb-4 drop-shadow">
                                     {slide.description}
                                 </p>
 

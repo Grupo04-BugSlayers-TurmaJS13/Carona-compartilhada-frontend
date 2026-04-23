@@ -38,7 +38,7 @@ function Home() {
                     <div className="max-w-4xl mx-auto text-center bg-[var(--color-background-card)] border border-[var(--color-stroke)]
                         rounded-[var(--radius-3xl)] p-12 shadow-[var(--shadow-soft)]">
 
-                        <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-4">
+                        <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-4">
                             Pronto para começar?
                         </h2>
 

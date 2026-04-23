@@ -67,7 +67,7 @@ function MapaPreview() {
 
             {/* HEADER */}
             <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)]">
+                <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     Caronas perto de você
                 </h2>
                 <p className="text-[var(--color-foreground-muted)] mt-3">

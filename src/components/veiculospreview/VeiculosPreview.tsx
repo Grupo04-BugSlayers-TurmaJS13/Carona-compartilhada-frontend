@@ -42,7 +42,7 @@ function VeiculosPreview({ veiculos: veiculosProp = [] }: VeiculosPreviewProps) 
 
             <div className="flex flex-col md:flex-row md:items-end md:justify-between max-w-6xl mx-auto mb-12">
                 <div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary)]">
+                    <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                         Veículos disponíveis
                     </h2>
                     <p className="text-[var(--color-foreground-muted)] mt-2">

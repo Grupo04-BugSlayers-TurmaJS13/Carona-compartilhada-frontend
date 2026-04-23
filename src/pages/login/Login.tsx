@@ -57,19 +57,19 @@ function Login() {
                 alt="logo-site"
                 className="w-40 md:w-55 h-auto items-center justify-center my-6 mx-auto drop-shadow-md drop-shadow-primary"
               />
-              <h1 className="text-2xl md:text-3xl font-heading font-semibold leading-snug">
+              <h1 className="rf-2xl md:rf-3xl font-heading font-semibold leading-snug">
                 Programe sua rotina através de{" "}
                 <span className="text-primary">corridas agendadas</span>
               </h1>
 
-              <p className=" text-sm my-4 text-gray-300">
+              <p className=" rf-sm my-4 text-gray-300">
                 Uma plataforma completa para agendar corridas e otimizar seu
                 tempo, ou realizar caronas compartilhadas, conectando
                 passageiros e motoristas de forma eficiente.
               </p>
             </div>
 
-            <div className="space-y-2 text-sm text-gray-300 md:pb-4">
+            <div className="space-y-2 rf-sm text-gray-300 md:pb-4">
               <p className="flex gap-2 items-center">
                 <LuTimerReset
                   size={35}
@@ -95,10 +95,10 @@ function Login() {
           </div>
 
           <div className="bg- p-6 md:p-10 flex flex-col justify-center w-full bg-green-950">
-            <h2 className="text-2xl font-heading font-semibold text-[var(--color-primary)]">
+            <h2 className="rf-2xl font-heading font-semibold text-[var(--color-primary)]">
               Bem-vindo de volta
             </h2>
-            <p className="text-sm  mb-6">Acesse sua conta para continuar</p>
+            <p className="rf-sm  mb-6">Acesse sua conta para continuar</p>
 
             <motion.form
               className="space-y-4"
@@ -108,7 +108,7 @@ function Login() {
               transition={{ duration: 0.5 }}
             >
               <div>
-                <label className="text-xs ">E-mail</label>
+                <label className="rf-xs ">E-mail</label>
                 <input
                   type="email"
                   name="usuario"
@@ -118,7 +118,7 @@ function Login() {
                   className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                 />
                 {usuarioLogin.usuario?.length > 0 && !emailValido && (
-                  <span className="text-red-400 text-xs flex items-center p-2 gap-2">
+                  <span className="text-red-400 rf-xs flex items-center p-2 gap-2">
                     <FaExclamationTriangle size={16} />
                     Digite um e-mail válido
                   </span>
@@ -126,7 +126,7 @@ function Login() {
               </div>
 
               <div>
-                <label className="text-xs ">Senha</label>
+                <label className="rf-xs ">Senha</label>
                 <input
                   type="password"
                   name="senha"
@@ -137,7 +137,7 @@ function Login() {
                 />
               </div>
 
-              <div className="text-right text-xs text-primary cursor-pointer">
+              <div className="text-right rf-xs text-primary cursor-pointer">
                 Esqueceu a senha?
               </div>
               <div className="flex items-center justify-center">
@@ -157,7 +157,7 @@ function Login() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-xs">
+              <div className="flex items-center gap-2 rf-xs">
                 <div className="flex-1 h-px bg-gray-300" />
                 ou continue com
                 <div className="flex-1 h-px bg-gray-300" />
@@ -167,20 +167,20 @@ function Login() {
                 type="button"
                 className="w-full py-3 rounded-lg border border-gray-300 flex items-center justify-center gap-2 hover:bg-gray-100 transition"
               >
-                <span className="text-sm flex gap-2 items-center">
+                <span className="rf-sm flex gap-2 items-center">
                   <FcGoogle size={20} />
                   Google
                 </span>
               </button>
 
              
-                <p className="text-xs text-center mt-4">
+                <p className="rf-xs text-center mt-4">
                   Não tem uma conta?{" "}
                   <Link
                     to="/cadastrar"
                     className="text-(--color-primary) cursor-pointer"
                   >
-                    <p className="text-xs text-center text-(--color-primary) "> Cadastre-se grátis</p>
+                    <p className="rf-xs text-center text-(--color-primary) "> Cadastre-se grátis</p>
                   </Link>
                 </p>
               

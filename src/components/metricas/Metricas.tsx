@@ -26,11 +26,11 @@ function Metricas() {
                             rounded-2xl p-8 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-bip)] hover:-translate-y-2
                             transition duration-300">
 
-                            <span className="text-[var(--text-2xl)] font-bold text-[var(--color-primary)]">
+                            <span className="text-xl font-bold text-[var(--color-primary)]">
                                 {item.value}
                             </span>
 
-                            <p className="text-[var(--color-foreground-muted)] mt-2 text-sm">
+                            <p className="text-[var(--color-foreground-muted)] mt-2 rf-sm">
                                 {item.label}
                             </p>
 
