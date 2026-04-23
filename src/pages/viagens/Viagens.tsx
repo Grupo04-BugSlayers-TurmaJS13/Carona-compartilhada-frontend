@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from "react";
 import { Search, MapPin, Navigation, Plus, Car, Sparkles, SlidersHorizontal, Calendar, X } from "lucide-react";
 import CardViagem from "../../components/cardviagem/CardViagem";
