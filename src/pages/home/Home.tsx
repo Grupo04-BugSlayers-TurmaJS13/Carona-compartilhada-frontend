@@ -14,24 +14,12 @@ function Home() {
         <>
             <PageShell>
                 <Carousel />
-                <div className="py-2">
                     <ComoFunciona />
-                </div>
-                <div className="py-2">
                     <Diferencial />
-                </div>
-                <div className="py-2">
                     <VeiculosPreview />
-                </div>
-                <div className="py-2">
                     <Metricas />
-                </div>
-                <div className="py-2">
                     <Avaliacao />
-                </div>
-                <div className="py-2">
                     <MapaPreview />
-                </div>
 
                 <section className="w-full py-24 px-6 md:px-16 bg-[var(--color-background)]">
 

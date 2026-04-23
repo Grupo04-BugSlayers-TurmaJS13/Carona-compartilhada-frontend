@@ -26,7 +26,7 @@ function ComoFunciona() {
                 <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     Como funciona
                 </h2>
-                <p className="text-[var(--color-foreground-muted)] mt-3">
+                <p className="text-[var(--color-foreground-muted)] mt-3 m-auto">
                     Simples, rápido e sustentável com o BipBip
                 </p>
             </div>

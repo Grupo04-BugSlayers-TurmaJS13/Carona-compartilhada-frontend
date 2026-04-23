@@ -48,6 +48,7 @@ function Navbar() {
 
   const linkStyle = {
     display: "inline-flex",
+    margin: "auto",
     justifyContent: "space-between",
     alignItems: "center",
     gap: "var(--space-2)",

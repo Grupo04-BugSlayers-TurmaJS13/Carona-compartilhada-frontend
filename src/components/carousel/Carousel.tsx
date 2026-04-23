@@ -110,7 +110,7 @@ export default function Carousel() {
             {/* Botões */}
             <button
                 onClick={prevSlide}
-                className="absolute top-1/2 left-4 -translate-y-1/2 text-primary px-3 py-2 hover:scale-110 transition"
+                className="absolute top-1/2 left-4 -translate-y-1/2 px-3 py-2 hover:scale-110 transition"
             >
                 <MdArrowBackIosNew size={35} />
 
@@ -118,9 +118,9 @@ export default function Carousel() {
 
             <button
                 onClick={nextSlide}
-                className="absolute top-1/2 right-4 -translate-y-1/2 text-primary px-3 py-2 rounded-full hover:scale-110 transition"
+                className="absolute top-1/2 right-4 -translate-y-1/2 px-3 py-2 rounded-full hover:scale-110 transition"
             >
-                <MdArrowForwardIos size={35} />
+                <MdArrowForwardIos size={35}/>
             </button>
 
             <div className="absolute bottom-4 w-full flex justify-center gap-2">

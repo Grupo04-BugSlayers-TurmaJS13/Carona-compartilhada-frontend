@@ -70,7 +70,7 @@ function MapaPreview() {
                 <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     Caronas perto de você
                 </h2>
-                <p className="text-[var(--color-foreground-muted)] mt-3">
+                <p className="text-[var(--color-foreground-muted)] mt-3 m-auto">
                     Veja rotas e pontos disponíveis em tempo real
                 </p>
             </div>

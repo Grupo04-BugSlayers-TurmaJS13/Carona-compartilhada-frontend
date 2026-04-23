@@ -51,7 +51,7 @@ function Footer() {
             >
               {[
                 { to: "/listarusuarios", label: "Usuarios" },
-                { to: "/listarviagens", label: "Viagens" },
+                { to: "/viagens", label: "Viagens" },
                 { to: "/listarveiculos", label: "Veiculos" },
               ].map(({ to, label }) => (
                 <Link

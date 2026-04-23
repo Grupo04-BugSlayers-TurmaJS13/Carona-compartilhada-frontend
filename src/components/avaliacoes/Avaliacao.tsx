@@ -21,10 +21,10 @@ function Avaliacoes() {
         <section className="w-full px-6 md:px-16 bg-[var(--color-background)]">
 
             <div className="text-center mb-14">
-                <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
+                <h2 className="text-rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     O que estão dizendo
                 </h2>
-                <p className="text-[var(--color-foreground-muted)] mt-3">
+                <p className="text-[var(--color-foreground-muted)] mt-3 m-auto">
                     Experiências reais de quem já usa o BipBip
                 </p>
             </div>

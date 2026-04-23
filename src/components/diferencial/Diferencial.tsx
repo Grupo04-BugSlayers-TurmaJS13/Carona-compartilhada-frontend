@@ -26,7 +26,7 @@ function Diferencial() {
                 <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     O Nosso diferencial
                 </h2>
-                <p className="text-[var(--color-foreground-muted)] mt-3">
+                <p className="text-[var(--color-foreground-muted)] mt-3 m-auto">
                     Mais do que carona — uma nova forma de se conectar
                 </p>
             </div>

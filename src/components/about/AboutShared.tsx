@@ -71,7 +71,9 @@ export function BrandLogo({ className = "" }: { className?: string }) {
 
 export function PageShell({ children }: { children: ReactNode }) {
     return (
-        <main className="relative isolate min-h-screen overflow-hidden bg-background font-sans text-foreground">
+        <main 
+            className="relative isolate min-h-screen overflow-hidden bg-background font-sans text-foreground"
+        >
             <AuroraBackground />
             {children}
         </main>

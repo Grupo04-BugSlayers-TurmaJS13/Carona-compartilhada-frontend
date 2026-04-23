@@ -69,7 +69,7 @@ function ListarUsuarios() {
 
                 {isLoading && (
                     <div className="flex justify-center w-full py-40 bg-primary-dark">
-                        <SyncLoader color="#312e81" size={20} />
+                        <SyncLoader color="#84CC16" size={20} />
                     </div>
                 )}
 
