@@ -195,7 +195,7 @@ export default function AboutUs() {
                   variants={fadeUp}
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "var(--text-2xl)",
+                    fontSize: "var(--rf-2xl)",
                     fontWeight: 700,
                     color: "var(--color-foreground-white)",
                     letterSpacing: "-0.02em",
@@ -223,7 +223,7 @@ export default function AboutUs() {
                   custom={0.22}
                   variants={fadeUp}
                   style={{
-                    fontSize: "var(--text-base)",
+                    fontSize: "var(--rf-base)",
                     color: "var(--color-foreground-muted)",
                     lineHeight: 1.75,
                     width: "100%",
@@ -318,7 +318,7 @@ export default function AboutUs() {
                         </div>
                       ) : (
                         <div
-                          className="flex items-center justify-center text-2xl font-semibold"
+                          className="flex items-center justify-center rf-2xl font-semibold"
                           style={{
                             width: 96,
                             height: 96,
@@ -336,7 +336,7 @@ export default function AboutUs() {
                       <span
                         className="uppercase tracking-[0.2em] font-semibold"
                         style={{
-                          fontSize: "var(--text-xs)",
+                          fontSize: "var(--rf-xs)",
                           border: "1px solid rgba(132,204,22,0.2)",
                           background: "rgba(132,204,22,0.06)",
                           color: "var(--color-primary-light)",
@@ -356,7 +356,7 @@ export default function AboutUs() {
                         className="font-semibold"
                         style={{
                           fontFamily: "var(--font-display)",
-                          fontSize: "var(--text-lg)",
+                          fontSize: "var(--rf-lg)",
                           color: "var(--color-foreground-white)",
                           letterSpacing: "-0.01em",
                         }}
@@ -366,7 +366,7 @@ export default function AboutUs() {
                       <p
                         className="leading-7 mx-auto"
                         style={{
-                          fontSize: "var(--text-sm)",
+                          fontSize: "var(--rf-sm)",
                           color: "var(--color-foreground-muted)",
                           maxWidth: "28ch",
                         }}
@@ -493,7 +493,7 @@ export default function AboutUs() {
                   className="font-bold"
                   style={{
                     fontFamily: "var(--font-display)",
-                    fontSize: "var(--text-xl)",
+                    fontSize: "var(--rf-xl)",
                     color: "var(--color-foreground-white)",
                     letterSpacing: "-0.02em",
                     lineHeight: 1.2,
@@ -518,7 +518,7 @@ export default function AboutUs() {
                 <p
                   className="leading-8"
                   style={{
-                    fontSize: "var(--text-base)",
+                    fontSize: "var(--rf-base)",
                     color: "var(--color-foreground-muted)",
                     marginTop: "var(--space-4)",
                     maxWidth: "64ch",
@@ -601,7 +601,7 @@ export default function AboutUs() {
                           className="font-semibold"
                           style={{
                             fontFamily: "var(--font-display)",
-                            fontSize: "var(--text-lg)",
+                            fontSize: "var(--rf-lg)",
                             color: "var(--color-foreground-white)",
                             letterSpacing: "-0.01em",
                             marginBottom: "var(--space-2)",
@@ -612,7 +612,7 @@ export default function AboutUs() {
                         <p
                           className="leading-7"
                           style={{
-                            fontSize: "var(--text-sm)",
+                            fontSize: "var(--rf-sm)",
                             color: "var(--color-foreground-muted)",
                           }}
                         >
