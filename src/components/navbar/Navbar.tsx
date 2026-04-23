@@ -1,13 +1,16 @@
 import { UserIcon } from "@phosphor-icons/react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaSignOutAlt } from "react-icons/fa";
-import { useState } from "react";
-import { GoHome } from "react-icons/go";
+import { FaCar, FaSignOutAlt, FaUser } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
+import { GoHome, GoProjectRoadmap } from "react-icons/go";
 import { HiMenu, HiX } from "react-icons/hi";
+import { RoadIcon } from "lucide-react";
+import { FaPeopleGroup } from "react-icons/fa6";
 
 function Navbar() {
   const navigate = useNavigate();
   const [menuAberto, setMenuAberto] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   function logout() {
     navigate("/");
@@ -17,17 +20,35 @@ function Navbar() {
     setMenuAberto(false);
   }
 
+  // 🔥 Fecha ao clicar fora
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuAberto(false);
+      }
+    }
+
+    if (menuAberto) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuAberto]);
+
   const links = [
-    { to: "/home", label: "Home", icon: <GoHome size={16} /> },
-    { to: "/listarusuarios", label: "Usuarios" },
-    { to: "/listarviagens", label: "Viagens" },
-    { to: "/listarveiculos", label: "Veículos" },
-    { to: "/sobre", label: "Sobre" },
-    { to: "/sobrenos", label: "Sobre nós" },
+    { to: "/home", label: "Home", icon: <GoHome size={20} /> },
+    { to: "/listarusuarios", label: "Usuários", icon: <FaUser size={20} /> },
+    { to: "/viagens", label: "Viagens", icon: <RoadIcon size={20} /> },
+    { to: "/listarveiculos", label: "Veículos", icon: <FaCar size={20} /> },
+    { to: "/sobre", label: "Sobre", icon: <GoProjectRoadmap size={20} /> },
+    { to: "/sobrenos", label: "Sobre nós", icon: <FaPeopleGroup size={20} /> },
   ];
 
   const linkStyle = {
     display: "inline-flex",
+    justifyContent: "space-between",
     alignItems: "center",
     gap: "var(--space-2)",
     fontSize: "var(--rf-xs)",
@@ -60,6 +81,7 @@ function Navbar() {
           gap: "var(--space-6)",
         }}
       >
+        {/* LOGO */}
         <Link to="/home" style={{ flexShrink: 0 }}>
           <img
             src="/logo.png"
@@ -73,14 +95,14 @@ function Navbar() {
           />
         </Link>
 
+        {/* MENU DESKTOP */}
         <nav
+          className="hidden md:flex"
           style={{
-            display: "flex",
             alignItems: "center",
             gap: "var(--space-6)",
             flex: 1,
           }}
-          className="hidden md:flex"
         >
           {links.map(({ to, label, icon }) => (
             <Link
@@ -107,33 +129,26 @@ function Navbar() {
               marginLeft: "auto",
             }}
           >
-            <button
-              aria-label="Perfil do usuário"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                width: 36,
-                height: 36,
-                borderRadius: "var(--radius-full)",
-                border: "1px solid var(--color-stroke-light)",
-                background: "rgba(31,31,31,0.5)",
-                color: "var(--color-foreground-low)",
-                cursor: "pointer",
-                transition: "border-color 0.2s, color 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = "rgba(132,204,22,0.4)";
-                e.currentTarget.style.color = "var(--color-primary-light)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = "var(--color-stroke-light)";
-                e.currentTarget.style.color = "var(--color-foreground-low)";
-              }}
-            >
-              <UserIcon size={18} />
-            </button>
+            {/* PERFIL */}
+            <Link to="/perfil">
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: 36,
+                  height: 36,
+                  borderRadius: "var(--radius-full)",
+                  border: "1px solid var(--color-stroke-light)",
+                  background: "rgba(31,31,31,0.5)",
+                  color: "var(--color-foreground-low)",
+                }}
+              >
+                <UserIcon size={18} />
+              </div>
+            </Link>
 
+            {/* SAIR */}
             <Link
               to="/login"
               onClick={logout}
@@ -150,15 +165,6 @@ function Navbar() {
                 color: "var(--color-primary-light)",
                 borderRadius: "var(--radius-full)",
                 padding: "var(--space-2) var(--space-5)",
-                transition: "background 0.2s, border-color 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "rgba(132,204,22,0.12)";
-                e.currentTarget.style.borderColor = "rgba(132,204,22,0.4)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "rgba(132,204,22,0.06)";
-                e.currentTarget.style.borderColor = "rgba(132,204,22,0.2)";
               }}
             >
               <FaSignOutAlt size={14} />
@@ -167,62 +173,86 @@ function Navbar() {
           </div>
         </nav>
 
+        {/* BOTÃO HAMBURGUER */}
         <button
           className="md:hidden"
           onClick={() => setMenuAberto(!menuAberto)}
-          aria-label="Abrir menu"
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
             width: 36,
             height: 36,
             borderRadius: "var(--radius-lg)",
             border: "1px solid var(--color-stroke-light)",
             background: "rgba(31,31,31,0.5)",
             color: "var(--color-foreground-muted)",
-            cursor: "pointer",
             marginLeft: "auto",
           }}
         >
-          {menuAberto ? <HiX size={18} /> : <HiMenu size={18} />}
+          {menuAberto ? (<HiX size={22} className="justify-center items-center text-center m-auto" />) : (
+            <HiMenu size={22} className="justify-center items-center text-center m-auto" />
+          )}
         </button>
       </div>
 
+      {/* MENU MOBILE */}
       {menuAberto && (
-        <div
-          style={{
-            borderTop: "1px solid var(--color-stroke)",
-            background: "rgba(10,10,10,0.97)",
-            backdropFilter: "blur(20px)",
-            padding: "var(--space-6) var(--space-4)",
-            display: "flex",
-            flexDirection: "column",
-            gap: "var(--space-4)",
-          }}
-          className="md:hidden"
-        >
-          {links.map(({ to, label, icon }) => (
-            <Link
-              key={to}
-              to={to}
-              onClick={fecharMenu}
-              style={linkStyle}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "var(--color-primary-light)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "var(--color-foreground-low)")
-              }
-            >
-              {icon && icon}
-              {label}
-            </Link>
-          ))}
-        </div>
+        <>
+          {/* OVERLAY */}
+          <div
+            className="fixed inset-0 bg-black/60 z-40"
+            onClick={() => setMenuAberto(false)}
+          />
+
+          {/* MENU LATERAL */}
+          <div
+            ref={menuRef}
+            className="fixed right-0 h-full w-[280px] z-50 md:hidden
+              bg-[var(--color-background-card)] backdrop-blur-xl
+              border-l border-[var(--color-stroke)] shadow-[var(--shadow-soft)] flex flex-col p-6 gap-6 animate-slide-in"
+          >
+            {links.map(({ to, label, icon }) => (
+              <Link
+                key={to}
+                to={to}
+                onClick={fecharMenu}
+                className="flex items-center gap-3 rf-sm font-semibold uppercase tracking-widest 
+                  text-[var(--color-foreground-low)] hover:text-[var(--color-primary-light)]
+                  py-2 border-b border-[var(--color-stroke)] transition"
+              >
+                {icon && icon}
+                {label}
+              </Link>
+            ))}
+
+            <div className="mt-auto flex flex-col gap-4">
+              <Link
+                to="/perfil"
+                onClick={fecharMenu}
+                className="flex items-center gap-2 text-[var(--color-foreground-muted)] uppercase font-semibold"
+              >
+                <UserIcon size={20} />
+                Perfil
+              </Link>
+
+              <Link
+                to="/login"
+                onClick={() => {
+                  logout();
+                  fecharMenu();
+                }}
+                className="flex items-center justify-center gap-2
+                bg-[var(--color-primary)] font-semibold uppercase tracking-widest
+                text-[var(--color-background-card)]
+                py-2 rounded-full hover:bg-[var(--color-primary-dark)] transition"
+              >
+                <FaSignOutAlt size={18} />
+                Sair
+              </Link>
+            </div>
+          </div>
+        </>
       )}
     </header>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
