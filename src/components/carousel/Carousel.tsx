@@ -5,6 +5,7 @@ import carona from "../../assets/img/carona.jpg"
 import doguinho from "../../assets/img/doguinho.jpg"
 import passageira from "../../assets/img/passageir.jpg"
 import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md"
+import { Link } from "react-router-dom"
 
 const slides = [
     {
@@ -48,7 +49,7 @@ export default function Carousel() {
 
         const interval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % slides.length)
-        }, 4000)
+        }, 9000)
 
         return () => clearInterval(interval)
     }, [isPaused])
@@ -65,19 +66,18 @@ export default function Carousel() {
         <div
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            className="w-full relative overflow-hidden shadow-[var(--shadow-soft)]"
-        >
+            className="w-full relative overflow-hidden shadow-[var(--shadow-soft)]">
+
             {/* Slides */}
             <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${current * 100}%)` }}
-            >
+                className="flex transition-transform duration-700 ease-in-out pt-16" 
+                style={{ transform: `translateX(-${current * 100}%)` }}>
+                    
                 {slides.map((slide) => (
                     <div
                         key={slide.id}
-                        className=" relative min-w-full h-[400px] md:h-[600px] lg:h-screen overflow-hidden"
-                    >
-                        {/* IMAGEM */}
+                        className=" relative min-w-full h-[400px] md:h-[600px] lg:h-[680px] overflow-hidden">
+
                         <img
                             src={slide.img}
                             alt={slide.title}
@@ -86,7 +86,7 @@ export default function Carousel() {
 
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/70"></div>
 
-                        <div className="absolute inset-0 flex items-center px-10 pt-80">
+                        <div className="absolute inset-0 flex items-center px-10 pt-40">
                             <div className="w-full md:w-1/3 pl-6 md:pl-16 lg:pl-24">
 
                                 <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 drop-shadow-lg ">
@@ -97,12 +97,10 @@ export default function Carousel() {
                                     {slide.description}
                                 </p>
 
-                                <button className="bg-primary text-black px-5 py-2 rounded-full font-medium shadow-[0_0_20px_-5px_rgba(132,204,22,0.4)]
-                                    hover:shadow-[0_0_30px_-5px_rgba(132,204,22,0.6)]
-                                    hover:bg-[var(--color-primary-light)]
-                                    transition">
+                                <Link to="/" className="px-5 py-2 rounded-full font-medium shadow-[0_0_20px_-5px_rgba(132,204,22,0.4)]
+                                    hover:shadow-[0_0_30px_-5px_rgba(132,204,22,0.6)] bg-[var(--color-primary-dark)] transition">
                                     Saiba mais
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -112,7 +110,7 @@ export default function Carousel() {
             {/* Botões */}
             <button
                 onClick={prevSlide}
-                className="absolute top-1/2 left-4 -translate-y-1/2 text-primary px-3 py-2 rounded-full hover:scale-110 transition"
+                className="absolute top-1/2 left-4 -translate-y-1/2 text-primary px-3 py-2 hover:scale-110 transition"
             >
                 <MdArrowBackIosNew size={35} />
 

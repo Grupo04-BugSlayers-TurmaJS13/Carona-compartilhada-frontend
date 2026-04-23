@@ -8,6 +8,7 @@ import Home from "./pages/home/Home";
 import ListarVeiculos from "./components/veiculos/listarveiculos/ListarVeiculos";
 import { AuthProvider } from "./contexts/AuthContext";
 import FormVeiculo from "./components/veiculos/formveiculo/FormVeiculo";
+import DeletarVeiculos from "./components/veiculos/deletarveiculos/DeletarVeiculos";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/listarveiculos" element={<ListarVeiculos />} />
           <Route path="/cadastrarveiculos" element={<FormVeiculo />} />
           <Route path="/atualizarveiculo/:id" element={<FormVeiculo />} />
+          <Route path="/deletarveiculo/:id" element={<DeletarVeiculos />} />
           <Route path="/sobre" element={<AboutProject />} />
           <Route path="/sobrenos" element={<AboutUs />} />
         </Routes>
