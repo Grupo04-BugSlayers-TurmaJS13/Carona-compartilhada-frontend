@@ -58,7 +58,7 @@ function Footer() {
                   key={to}
                   to={to}
                   style={{
-                    fontSize: "var(--text-xs)",
+                    fontSize: "var(--rf-xs)",
                     fontWeight: 600,
                     letterSpacing: "0.2em",
                     textTransform: "uppercase",
@@ -93,7 +93,7 @@ function Footer() {
                   key={to}
                   to={to}
                   style={{
-                    fontSize: "var(--text-xs)",
+                    fontSize: "var(--rf-xs)",
                     fontWeight: 600,
                     letterSpacing: "0.2em",
                     textTransform: "uppercase",
@@ -124,7 +124,7 @@ function Footer() {
               background: "none",
               border: "none",
               cursor: "pointer",
-              fontSize: "var(--text-xs)",
+              fontSize: "var(--rf-xs)",
               fontWeight: 600,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -180,7 +180,7 @@ function Footer() {
         >
           <p
             style={{
-              fontSize: "var(--text-xs)",
+              fontSize: "var(--rf-xs)",
               color: "var(--color-foreground-low)",
               letterSpacing: "0.1em",
             }}
@@ -190,7 +190,7 @@ function Footer() {
           </p>
           <p
             style={{
-              fontSize: "var(--text-xs)",
+              fontSize: "var(--rf-xs)",
               color: "var(--color-stroke-light)",
               letterSpacing: "0.08em",
             }}
