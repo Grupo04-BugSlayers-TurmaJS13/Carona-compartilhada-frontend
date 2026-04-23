@@ -38,7 +38,7 @@ function Login() {
 
   useEffect(() => {
     if (usuario.token !== "") {
-      navigate("/perfil");
+      navigate("/listarusuarios");
     }
   }, [usuario]);
 

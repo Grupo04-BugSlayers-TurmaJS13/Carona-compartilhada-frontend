@@ -7,6 +7,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Perfil from "./pages/perfil/Perfil";
 import AtualizarPerfil from "./pages/perfil/AtualizarPerfil";
+import ListarUsuarios from "./components/usuarios/listausuario/ListarUsuarios";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/perfil/:id" element={<Perfil />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/atualizarusuario" element={<AtualizarPerfil />} />
+          <Route path="/listarusuarios" element={<ListarUsuarios />} />
         </Routes>
         
       </BrowserRouter>
