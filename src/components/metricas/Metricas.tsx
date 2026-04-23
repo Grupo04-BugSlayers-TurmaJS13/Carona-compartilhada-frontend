@@ -40,7 +40,7 @@ function Metricas() {
                 </div>
             </div>
         </section>
-    );
+    )
 }
 
-export default Metricas;
+export default Metricas
