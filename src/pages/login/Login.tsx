@@ -8,7 +8,6 @@ import {
 import { FaExclamationTriangle } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { LuTimerReset } from "react-icons/lu";
-import { IoMdTrendingUp } from "react-icons/io";
 import { TbNotes } from "react-icons/tb";
 import { PiPlantLight } from "react-icons/pi";
 import type UsuarioLogin from "../../models/UsuarioLogin";
@@ -31,7 +30,7 @@ function Login() {
 
   useEffect(() => {
     if (usuario.token !== "") {
-      navigate("/teste");
+      navigate("/home");
     }
   }, [usuario]);
 
