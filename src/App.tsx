@@ -9,27 +9,31 @@ import ListarVeiculos from "./components/veiculos/listarveiculos/ListarVeiculos"
 import { AuthProvider } from "./contexts/AuthContext";
 import FormVeiculo from "./components/veiculos/formveiculo/FormVeiculo";
 import DeletarVeiculos from "./components/veiculos/deletarveiculos/DeletarVeiculos";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/listarveiculos" element={<ListarVeiculos />} />
-          <Route path="/cadastrarveiculos" element={<FormVeiculo />} />
-          <Route path="/atualizarveiculo/:id" element={<FormVeiculo />} />
-          <Route path="/deletarveiculo/:id" element={<DeletarVeiculos />} />
-          <Route path="/sobre" element={<AboutProject />} />
-          <Route path="/sobrenos" element={<AboutUs />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </AuthProvider>
-  );
+    <>
+      <ToastContainer />
+      <AuthProvider>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/listarveiculos" element={<ListarVeiculos />} />
+            <Route path="/cadastrarveiculos" element={<FormVeiculo />} />
+            <Route path="/atualizarveiculo/:id" element={<FormVeiculo />} />
+            <Route path="/deletarveiculo/:id" element={<DeletarVeiculos />} />
+            <Route path="/sobre" element={<AboutProject />} />
+            <Route path="/sobrenos" element={<AboutUs />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </AuthProvider>
+    </>
+  )
 }
 
 export default App
