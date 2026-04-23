@@ -16,6 +16,7 @@ import { InstagramLogoIcon } from "@phosphor-icons/react/dist/ssr";
 import { FacebookLogoIcon, LinkedinLogoIcon } from "@phosphor-icons/react";
 import { ToastAlerta } from "../../utils/ToastAlerta";
 import { cadastrarUsuario } from "../../services/Service";
+import { PageShell } from "../../components/about/AboutShared";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -83,9 +84,10 @@ function Cadastro() {
 
   return (
     <>
+    <PageShell>
       <section className="min-h-screen mt-10 flex items-center justify-center bg-gray-light font-sans px-6 py-25 md:px-0">
-        <article className="w-full max-w-255 rounded-2xl overflow-hidden shadow-(--shadow-soft) border border-primary grid grid-cols-1 md:grid-cols-5">
-          <div className="bg-primary- text-white p-6 md:p-10 flex flex-col justify-between md:col-span-2">
+        <article className="w-full max-w-255 rounded-2xl overflow-hidden shadow-(--shadow-soft) border border-(--color-primary) grid grid-cols-1 md:grid-cols-5">
+          <div className="bg-background text-white p-6 md:p-10 flex flex-col justify-between md:col-span-2">
             <div className="flex flex-col">
               <img
                 src="https://ik.imagekit.io/bugslayers/bip%20bip/bipbip-logo.png"
@@ -94,7 +96,7 @@ function Cadastro() {
               />
               <h1 className="text-2xl md:text-3xl font-heading font-semibold leading-snug">
                 Crie sua conta e simplifique a{" "}
-                <span className="text-primary">rotina</span>
+                <span className="text-(--color-primary)">rotina</span>
               </h1>
 
               <p className="mt-4 text-sm text-gray-300">
@@ -106,21 +108,21 @@ function Cadastro() {
               <p className="flex gap-2 items-center">
                 <MdOutlineAppRegistration
                   size={35}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Cadastro rápido
               </p>
               <p className="flex gap-2 items-center">
                 <TbClick
                   size={35}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Acesso imediato
               </p>
               <p className="flex gap-2 items-center">
                 <MdOutlineSecurity
                   size={35}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Seguro
               </p>
@@ -133,21 +135,21 @@ function Cadastro() {
               <Link to="https://www.instagram.com" target="_blank" className="">
                 <InstagramLogoIcon
                   size={40}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm hover:shadow-sm shadow-primary-400"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm hover:shadow-sm shadow-(--color-primary)-400"
                 />
                 {/* Instagram */}
               </Link>
               <Link to="https://www.facebook.com" target="_blank" className="">
                 <FacebookLogoIcon
                   size={40}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm hover:shadow-sm shadow-primary-400"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm hover:shadow-sm shadow-(--color-primary)-400"
                 />
                 {/* Facebook */}
               </Link>
               <Link to="https://www.linkedin.com" target="_blank" className="">
                 <LinkedinLogoIcon
                   size={40}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm hover:shadow-sm shadow-primary-400"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm hover:shadow-sm shadow-(--color-primary)-400"
                 />
                 {/* LinkedIn */}
               </Link>
@@ -155,7 +157,7 @@ function Cadastro() {
           </div>
 
           <div className=" bg-green-950 p-6 md:p-10 flex flex-col  justify-center md:col-span-3">
-            <h2 className="text-2xl font-heading text-primary font-semibold text-text">
+            <h2 className="text-2xl font-heading text-(--color-primary) font-semibold text-text">
               Criar conta
             </h2>
 
@@ -175,7 +177,7 @@ function Cadastro() {
                   value={usuario.nome}
                   onChange={atualizarEstado}
                   placeholder="Seu nome"
-                  className="w-full mt-1 text-black p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 text-black p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
 
                 {usuario.nome.length > 0 && usuario.nome?.length < 3 && (
@@ -200,7 +202,7 @@ function Cadastro() {
                   value={usuario.usuario}
                   onChange={atualizarEstado}
                   placeholder="seu@email.com"
-                  className="w-full mt-1 p-3 text-black rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 p-3 text-black rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
 
                 {usuario.usuario?.length > 0 && !emailValido && (
@@ -224,7 +226,7 @@ function Cadastro() {
                   value={usuario.senha}
                   onChange={atualizarEstado}
                   placeholder="••••••"
-                  className="w-full mt-1 p-3 text-black rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 p-3 text-black rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
 
                 {usuario.senha?.length > 0 && usuario.senha?.length < 8 && (
@@ -248,7 +250,7 @@ function Cadastro() {
                   value={confirmarSenha}
                   onChange={handleConfirmarSenha}
                   placeholder="••••••"
-                  className="w-full mt-1 p-3 rounded-lg text-black bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 p-3 rounded-lg text-black bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
 
                 {confirmarSenha.length > 0 && !senhasIguais && (
@@ -273,13 +275,13 @@ function Cadastro() {
                   value={usuario.foto}
                   onChange={atualizarEstado}
                   placeholder="https://..."
-                  className="w-full mt-1 p-3 text-black rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 p-3 text-black rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
               </div>
 
               {usuario.foto && usuario.foto.trim().length > 0 && (
                 <div className="flex justify-center mb-4">
-                  <div className="w-24 h-24 rounded-full border-2 border-primary overflow-hidden">
+                  <div className="w-24 h-24 rounded-full border-2 border-(--color-primary) overflow-hidden">
                     <img
                       src={usuario.foto}
                       alt="preview"
@@ -291,12 +293,12 @@ function Cadastro() {
               )}
 
               <div className="flex gap-4 justify-around items-center m-auto">
-                <div className="flex justify-center items-center border border-primary hover:bg-primary-light hover:text-black rounded-2xl w-40 h-15">
+                <div className="flex justify-center items-center border border-(--color-primary) hover:bg-(--color-primary-light) hover:text-black rounded-2xl w-40 h-15">
                   <motion.button
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full py-3 rounded-lg  font-semibold hover:bg-(--color-primary-hover) transition"
+                    className="w-full py-3 rounded-lg  font-semibold hover:bg-(--color-primary-light) transition"
                   >
                     {isLoading ? (
                       <ClipLoader color="#fff" size={20} />
@@ -305,7 +307,7 @@ function Cadastro() {
                     )}
                   </motion.button>
                 </div>
-                <div className="flex justify-center items-center border border-primary hover:bg-red-500 hover:text-black rounded-2xl w-40 h-15">
+                <div className="flex justify-center items-center border border-(--color-primary) hover:bg-red-500 hover:text-black rounded-2xl w-40 h-15">
                   <motion.button
                     type="button"
                     whileHover={{ scale: 1.05 }}
@@ -320,7 +322,7 @@ function Cadastro() {
 
               <p className="text-xs text-center  mt-4">
                 Já tem uma conta?{" "}
-                <span className="text-primary">
+                <span className="text-(--color-primary)">
                   <Link to="/login">Entrar</Link>
                 </span>
               </p>
@@ -328,6 +330,7 @@ function Cadastro() {
           </div>
         </article>
       </section>
+      </PageShell>
     </>
   );
 }

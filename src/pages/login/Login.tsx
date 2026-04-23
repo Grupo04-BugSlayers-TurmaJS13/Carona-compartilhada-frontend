@@ -15,12 +15,20 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { FcGoogle } from "react-icons/fc";
 import { ClipLoader } from "react-spinners";
+import { PageShell } from "../../components/about/AboutShared";
 
 function Login() {
   const navigate = useNavigate();
 
   const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
-    {} as UsuarioLogin,
+    {
+      id: 0,
+      nome: "",
+      usuario: "",
+      senha: "",
+      foto: "",
+      token: "",
+    },
   );
 
   const { usuario, handleLogin, isLoading } = useContext(AuthContext);
@@ -48,8 +56,9 @@ function Login() {
 
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center bg-(color--background)  font-sans py-25 mt-10 px-6">
-        <article className="max-w-225 min-h-130 rounded-lg overflow-hidden shadow-(--shadow-soft) border-primary grid grid-cols-1 md:grid-cols-2">
+    <PageShell>
+      <section className="min-h-screen flex items-center justify-center  font-sans py-25 mt-10 px-6">
+        <article className="max-w-225 min-h-130 rounded-lg overflow-hidden border  border-(--color-primary) grid grid-cols-1 md:grid-cols-2">
           <div className="bg-(color--background-card) text-white p-6 md:p-10 flex flex-col justify-between">
             <div className="flex flex-col">
               <img
@@ -59,7 +68,7 @@ function Login() {
               />
               <h1 className="text-2xl md:text-3xl font-heading font-semibold leading-snug">
                 Programe sua rotina através de{" "}
-                <span className="text-primary">corridas agendadas</span>
+                <span className="text-(--color-primary)">corridas agendadas</span>
               </h1>
 
               <p className=" text-sm my-4 text-gray-300">
@@ -73,21 +82,21 @@ function Login() {
               <p className="flex gap-2 items-center">
                 <LuTimerReset
                   size={35}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Economia de tempo e praticidade
               </p>
               <p className="flex gap-2 items-center">
                 <TbNotes
                   size={35}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Histórico de viagens
               </p>
               <p className="flex gap-2 items-center">
                 <PiPlantLight
                   size={35}
-                  className="text-primary border border-primary rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
+                  className="text-(--color-primary) border border-(--color-primary) rounded-md p-2 bg-[rgba(121,84,237,0.1)] backdrop-blur-sm"
                 />
                 Sustentabilidade e economia compartilhada
               </p>
@@ -95,7 +104,7 @@ function Login() {
           </div>
 
           <div className="bg- p-6 md:p-10 flex flex-col justify-center w-full bg-green-950">
-            <h2 className="text-2xl font-heading font-semibold text-primary">
+            <h2 className="text-2xl font-heading font-semibold text-(--color-primary)">
               Bem-vindo de volta
             </h2>
             <p className="text-sm  mb-6">Acesse sua conta para continuar</p>
@@ -115,7 +124,7 @@ function Login() {
                   value={usuarioLogin.usuario}
                   onChange={atualizarEstado}
                   placeholder="seu@email.com"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 p-3 rounded-lg bg-gray-light focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
                 {usuarioLogin.usuario?.length > 0 && !emailValido && (
                   <span className="text-red-400 text-xs flex items-center p-2 gap-2">
@@ -133,11 +142,11 @@ function Login() {
                   value={usuarioLogin.senha}
                   onChange={atualizarEstado}
                   placeholder="••••••"
-                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="w-full mt-1 p-3 rounded-lg bg-gray-300 focus:outline-none focus:ring-2 focus:ring-(--color-primary)"
                 />
               </div>
 
-              <div className="text-right text-xs text-primary cursor-pointer">
+              <div className="text-right text-xs text-(--color-primary) cursor-pointer">
                 Esqueceu a senha?
               </div>
               <div className="flex items-center justify-center">
@@ -146,7 +155,7 @@ function Login() {
                     type="submit"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="w-full h-full py-3 rounded-lg border-black text-primary font-semibold hover:bg-green-700 transition"
+                    className="w-full h-full py-3 rounded-lg border-black text-(--color-primary) font-semibold hover:bg-green-700 transition"
                   >
                     {isLoading ? (
                       <ClipLoader color="#bbb" size={20} />
@@ -180,7 +189,7 @@ function Login() {
                     to="/cadastrar"
                     className=" cursor-pointer"
                   >
-                    <span className="text-primary">Cadastre-se grátis</span>
+                    <span className="text-(--color-primary)">Cadastre-se grátis</span>
                   </Link>
                 </p>
               
@@ -188,6 +197,7 @@ function Login() {
           </div>
         </article>
       </section>
+      </PageShell>
     </>
   );
 }
