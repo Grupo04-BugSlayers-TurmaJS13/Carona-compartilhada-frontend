@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300..700&family=Sora:wght@300..700&display=swap');
 @import "tailwindcss";
+
 @import "./components/ui.css";
 @import "./components/mockup.css";
 @import "./components/tech.css";
@@ -93,6 +94,48 @@ img {
   background: rgba(20, 20, 20, 0.8);
   backdrop-filter: blur(12px);
 }
+
+/* 2. Reset dentro da layer base para evitar conflitos */
+@layer base {
+  *, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+  }
+
+  html { 
+    scroll-behavior: smooth; 
+    -webkit-font-smoothing: antialiased; 
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+  a { text-decoration: none; color: inherit; }
+  button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+  p { max-width: 72ch; }
+}
+
+/* 3. Suas animações */
+@keyframes aurora-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -20px) scale(1.08); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.8); }
+}
+@keyframes progress-in {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
