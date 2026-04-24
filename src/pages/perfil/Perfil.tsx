@@ -10,7 +10,8 @@ import { FaPencil } from "react-icons/fa6"
 import { SyncLoader } from "react-spinners"
 import type Viagem from "../../models/Viagem"
 import { PageShell } from "../../components/about/AboutShared"
-import CardViagem from "../../components/cardviagem/CardViagem"
+import CardViagem from "../../components/viagens/cardviagem/CardViagem"
+
 
 
 function Perfil() {
