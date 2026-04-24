@@ -9,8 +9,8 @@ export default interface Viagem {
     tempo_vigagem: number;
     status: string;
     agendamento: boolean;
-    dataAgendamento: string;
-    dataEncerramento: string;
+    dataAgendamento?: string;
+    dataEncerramento?: string;
     formaPagamento: string;
     valor: number;
     veiculo: Veiculo;

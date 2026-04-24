@@ -5,6 +5,7 @@ export default interface Veiculo {
     foto:string;
     tipo: string;
     modelo: string;
+    
     marca: string;
     cor_veiculo: string;
     placa: string;
