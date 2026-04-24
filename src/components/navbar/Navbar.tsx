@@ -7,6 +7,7 @@ import { HiMenu, HiX } from "react-icons/hi";
 import { RoadIcon } from "lucide-react";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   // const navigate = useNavigate();
