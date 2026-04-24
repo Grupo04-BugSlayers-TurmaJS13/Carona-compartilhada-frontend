@@ -207,7 +207,7 @@ function Navbar() {
             ref={menuRef}
             className="fixed right-0 h-full w-[280px] z-50 md:hidden
               bg-[var(--color-background-card)] backdrop-blur-xl
-              border-l border-[var(--color-stroke)] shadow-[var(--shadow-soft)] flex flex-col p-6 gap-6 animate-slide-in"
+              border-l border-[var(--color-stroke)] shadow-[var(--shadow-soft)] flex flex-col p-6 gap-6 animate-slide-in "
           >
             {links.map(({ to, label, icon }) => (
               <Link

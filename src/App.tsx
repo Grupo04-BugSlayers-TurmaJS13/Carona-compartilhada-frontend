@@ -9,7 +9,7 @@ import ListarVeiculos from "./components/veiculos/listarveiculos/ListarVeiculos"
 import { AuthProvider } from "./contexts/AuthContext";
 import FormVeiculo from "./components/veiculos/formveiculo/FormVeiculo";
 import DeletarVeiculos from "./components/veiculos/deletarveiculos/DeletarVeiculos";
-import { ToastContainer } from "react-toastify";
+// import { ToastContainer } from "react-toastify";
 import Viagens from "./pages/viagens/Viagens";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Perfil from "./pages/perfil/Perfil";
@@ -20,13 +20,10 @@ import ListarUsuarios from "./components/usuarios/listausuario/ListarUsuarios";
 function App() {
   return (
     <>
-    <ToastContainer className="p-0 m-0" />
       <AuthProvider>
-        
         <BrowserRouter>
           <Navbar />
-          <div className="min-h-[80vh]">
-            <Routes>
+          <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastrar" element={<Cadastro />} />
@@ -42,8 +39,8 @@ function App() {
             <Route path="/sobre" element={<AboutProject />} />
             <Route path="/sobrenos" element={<AboutUs />} />
             <Route path="/viagens" element={<Viagens />} />
-            </Routes>
-          </div>
+          </Routes>
+
           <Footer />
         </BrowserRouter>
       </AuthProvider>

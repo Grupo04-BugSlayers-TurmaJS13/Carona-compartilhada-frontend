@@ -52,7 +52,7 @@ export default function ListarVeiculos() {
             <section className="min-h-screen min-w-full pt-35 py-10 bg-[var(--color-background)]">
 
                 <div className="flex justify-center px-30">
-                    <span className="font-heading text-5xl text-center text-[var(--color-foreground-high)] pb-10">
+                    <span className="font-heading text-3xl text-center text-[var(--color-foreground-high)] pb-10">
                         No <span className="text-[var(--color-primary)]">BipBip</span>, você organiza suas{" "}
                         <span className="text-[var(--color-primary)]">caronas</span> e garante uma mobilidade{" "}
                         <span className="text-[var(--color-primary)]">inteligente</span> e <span className="text-[var(--color-primary)]">sustentável</span>.

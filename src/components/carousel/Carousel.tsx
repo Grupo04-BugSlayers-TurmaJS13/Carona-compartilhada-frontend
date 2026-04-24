@@ -86,10 +86,10 @@ export default function Carousel() {
 
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/70"></div>
 
-                        <div className="absolute inset-0 flex items-center px-10 pt-40">
-                            <div className="w-full md:w-1/3 pl-6 md:pl-16 lg:pl-24">
+                        <div className="absolute inset-0 flex items-center px-20 pt-60">
+                            <div className=" md:w-1/2 p-4 md:pl-10 bg-[var(--color-background-card)]/60 rounded-lg">
 
-                                <h2 className="rf-2xl md:text-4xl lg:text-5xl font-bold text-white mb-3 drop-shadow-lg ">
+                                <h2 className="rf-2xl md:text-4xl lg:text-4xl font-bold text-white mb-3 drop-shadow-lg ">
                                     {slide.title}
                                 </h2>
 

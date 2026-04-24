@@ -53,7 +53,7 @@ function ListarUsuarios() {
         <PageShell>
             <section className="container min-h-screen  py-35  sm:px-5 md:px-10 lg:px-20">
                 <div className="flex justify-center  sm:px-10 md:px-20 lg:px-30">
-                    <span className="font-heading text-2xl text-center text-blue-light pb-10">
+                    <span className="font-heading text-3xl text-center text-blue-light pb-10">
                         {" "} Cada <span className="text-(--color-primary)">usuário </span> faz parte da sua rede de caronas — visualize
                         <span className="text-(--color-primary)"> perfis</span>, acompanhe <span className="text-(--color-primary)">informações 
                         </span> e mantenha motoristas e passageiros <span className="text-(--color-primary)">conectados 
@@ -61,7 +61,7 @@ function ListarUsuarios() {
                     </span>
                 </div>
 
-                <div className="h-0.5 bg-gradient-to-r from-transparent via-blue/20 to-transparent my-2" />
+                <div className="h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary)]/20 to-transparent my-2" />
 
                 <h1 className="text-3xl text-(--color-primary) text-center font-bold mb-6 flex gap-4 py-10 items-center justify-center">
                     <BsPeopleFill size={35} /> Usuários

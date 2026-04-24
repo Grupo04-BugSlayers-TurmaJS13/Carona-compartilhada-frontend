@@ -73,7 +73,7 @@ function Cadastro() {
   }
 
   function retornar() {
-    navigate("/");
+    navigate("/login");
   }
 
   useEffect(() => {
