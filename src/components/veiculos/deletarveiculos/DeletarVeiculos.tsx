@@ -75,7 +75,7 @@ function DeletarVeiculos() {
                     <div className="w-full max-w-md bg-[var(--color-background-card)] border border-[var(--color-stroke)]
                     rounded-2xl p-6 shadow-[var(--shadow-soft)] text-center">
 
-                        <h1 className="rf-2xl font-bold text-[var(--color-foreground-white)] mb-4">
+                        <h1 className="text-3xl font-bold text-[var(--color-primary)] mb-4">
                             Deletar Veículo
                         </h1>
 

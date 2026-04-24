@@ -14,7 +14,7 @@ function Navbar() {
   const [menuAberto, setMenuAberto] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  const {  handleLogout } = useContext(AuthContext)
+  const { handleLogout } = useContext(AuthContext)
 
   function fecharMenu() {
     setMenuAberto(false);
@@ -40,7 +40,7 @@ function Navbar() {
   const links = [
     { to: "/home", label: "Home", icon: <GoHome size={20} /> },
     { to: "/listarusuarios", label: "Usuários", icon: <FaUser size={20} /> },
-    { to: "/viagens", label: "Viagens", icon: <RoadIcon size={20} /> },
+    { to: "/listarviagens", label: "Viagens", icon: <RoadIcon size={20} /> },
     { to: "/listarveiculos", label: "Veículos", icon: <FaCar size={20} /> },
     { to: "/sobre", label: "Sobre", icon: <GoProjectRoadmap size={20} /> },
     { to: "/sobrenos", label: "Sobre nós", icon: <FaPeopleGroup size={20} /> },
@@ -98,7 +98,7 @@ function Navbar() {
 
         {/* MENU DESKTOP */}
         <nav
-          className="hidden md:flex"
+          className="hidden lg:flex"
           style={{
             alignItems: "center",
             gap: "var(--space-6)",
@@ -176,7 +176,7 @@ function Navbar() {
 
         {/* BOTÃO HAMBURGUER */}
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => setMenuAberto(!menuAberto)}
           style={{
             width: 36,
@@ -199,15 +199,15 @@ function Navbar() {
         <>
           {/* OVERLAY */}
           <div
-            className="fixed inset-0 bg-black/60 z-40"
+            className="fixed inset-0 bg-black/60 z-40 top-16"
             onClick={() => setMenuAberto(false)}
           />
 
           {/* MENU LATERAL */}
           <div
             ref={menuRef}
-            className="fixed right-0 h-full w-[280px] z-50 md:hidden
-              bg-[var(--color-background-card)] backdrop-blur-xl
+            className="fixed right-0 w-[280px] z-50 lg:hidden rounded-lg
+              bg-[var(--color-background-card)] backdrop-blur-xl top-16 
               border-l border-[var(--color-stroke)] shadow-[var(--shadow-soft)] flex flex-col p-6 gap-6 animate-slide-in "
           >
             {links.map(({ to, label, icon }) => (

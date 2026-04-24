@@ -49,9 +49,9 @@ export default function ListarVeiculos() {
 
     return (
         <PageShell>
-            <section className="min-h-screen min-w-full pt-35 py-10 bg-[var(--color-background)]">
+            <section className="container min-h-screen pt-20 sm:pt-24 md:pt-28 lg:pt-32 px-4 sm:px-6 md:px-10 lg:px-20]">
 
-                <div className="flex justify-center px-30">
+                <div className="flex justify-center py-8 sm:py-10 md:py-12">
                     <span className="font-heading text-3xl text-center text-[var(--color-foreground-high)] pb-10">
                         No <span className="text-[var(--color-primary)]">BipBip</span>, você organiza suas{" "}
                         <span className="text-[var(--color-primary)]">caronas</span> e garante uma mobilidade{" "}
@@ -63,13 +63,13 @@ export default function ListarVeiculos() {
 
                 <div className="flex flex-col sm:flex-row justify-between w-[90vw] sm:w-[80vw] lg:w-[75vw] m-auto my-8 items-center gap-4">
 
-                    <h1 className="font-heading text-4xl text-center text-[var(--color-foreground-white)] flex items-center gap-4">
-                        <FaCar size={40} className="text-[var(--color-primary)]" /> Veículos
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl text-(--color-primary) text-center font-bold mb-6 flex gap-3 sm:gap-4 pt-6 sm:pt-8 md:py-10 items-center justify-center">
+                        <FaCar size={40} className="sm:w-[35px] sm:h-[35px]" /> Veículos
                     </h1>
 
                     <button
                         onClick={() => navigate("/cadastrarveiculos")}
-                        className="bg-[var(--color-primary)] rounded-lg text-black px-6 py-3 font-bold
+                        className="bg-[var(--color-primary)] rounded-lg px-6 py-3 font-bold
                                     text-md hover:bg-[var(--color-primary-light)]transition-all flex items-center gap-2 shadow-[0_0_20px_-5px_rgba(132,204,22,0.4)]">
                         <FaPlusCircle size={20} />Cadastrar
                     </button>
@@ -81,7 +81,7 @@ export default function ListarVeiculos() {
                     </div>
                 )}
 
-                <article className="flex py-10 w-screen px-20 justify-center">
+                <article className="flex py-10 w-full justify-center items-center m-auto">
                     <div className="grid lg:grid-cols-3 gap-6 md:grid-cols-2 sm:grid-cols-1">
 
                         {veiculos.map((veiculo) => (

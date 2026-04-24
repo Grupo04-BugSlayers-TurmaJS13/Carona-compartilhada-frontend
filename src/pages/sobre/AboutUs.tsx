@@ -133,7 +133,7 @@ function SocialBtn({
 export default function AboutUs() {
   return (
     <PageShell>
-      <main className="page">
+      <main className="page pt-20">
         <section>
           <div className="container">
             <div

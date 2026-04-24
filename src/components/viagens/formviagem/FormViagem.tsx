@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext, useEffect, useState, type ChangeEvent, type SyntheticEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -198,7 +199,7 @@ function FormViagem() {
 	}
 
 	function retornar() {
-		navigate("/viagens");
+		navigate("/listarviagens");
 		ToastAlerta("Retornando para Viagens", "info");
 	}
 
@@ -208,12 +209,12 @@ function FormViagem() {
 
 		try {
 			if (id !== undefined) {
-				await atualizar("/viagens", viagem, setViagem, {
+				await atualizar(`/atualizarviagens/${id}`, viagem, setViagem, {
 					headers: { Authorization: token },
 				});
 				ToastAlerta("A viagem foi atualizada com sucesso!", "sucesso");
 			} else {
-				await cadastrar("/viagens", viagem, setViagem, {
+				await cadastrar("/cadastrarviagens", viagem, setViagem, {
 					headers: { Authorization: token },
 				});
 				ToastAlerta("A viagem foi cadastrada com sucesso!", "sucesso");
@@ -236,9 +237,9 @@ function FormViagem() {
 
 	return (
 		<PageShell>
-			<div className="min-h-screen flex items-center justify-center bg-(--color-background) px-4 py-20">
+			<div className="min-h-screen flex items-center justify-center bg-(--color-background) px-4 pt-30 pb-20">
 				<div className="w-full max-w-4xl">
-					<h1 className="text-center text-4xl text-(--color-foreground-white) mb-8">
+					<h1 className="text-center text-4xl text-[var(--color-primary)] mb-8">
 						{id !== undefined ? "Editar Viagem" : "Cadastrar Viagem"}
 					</h1>
 

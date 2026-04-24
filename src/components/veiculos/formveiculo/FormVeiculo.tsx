@@ -105,10 +105,10 @@ function FormVeiculo() {
 
 	return (
 		<PageShell>
-			<div className="min-h-screen flex items-center justify-center bg-[var(--color-background)] px-4 py-20">
+			<div className="min-h-screen flex items-center justify-center bg-(--color-background) px-4 pt-30 pb-20">
 
 				<div className="w-full max-w-2xl">
-					<h1 className="text-center text-4xl text-[var(--color-foreground-white)] mb-8">
+					<h1 className="text-center text-4xl text-[var(--color-primary)] mb-8">
 						{id !== undefined ? "Editar Veículo" : "Cadastrar Veículo"}
 					</h1>
 

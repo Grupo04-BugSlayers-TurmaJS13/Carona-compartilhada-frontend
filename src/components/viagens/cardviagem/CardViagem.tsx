@@ -1,4 +1,4 @@
-import { Car, ArrowRight } from "lucide-react";
+import { Car } from "lucide-react";
 import profileimg from "../../../assets/profileimg.jpg"
 import type Usuario from "../../../models/Usuario";
 import type Veiculo from "../../../models/Veiculo";
@@ -12,11 +12,11 @@ interface Viagem {
 interface CardViagemProps { viagem: Viagem; onReservar?: (viagem: Viagem) => void; }
 
 const statusMap: Record<string, { label: string; color: string }> = {
-  ativo:    { label: "Disponível", color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" },
-  agendado: { label: "Agendado",   color: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
+  ativo: { label: "Disponível", color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" },
+  agendado: { label: "Agendado", color: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
 };
 
-export default function CardViagem({ viagem, onReservar }: CardViagemProps) {
+export default function CardViagem({ viagem }: CardViagemProps) {
   const badge = statusMap[viagem.status] ?? statusMap["ativo"];
 
   return (
@@ -32,10 +32,10 @@ export default function CardViagem({ viagem, onReservar }: CardViagemProps) {
           <div className="relative shrink-0">
             <div className="h-20 w-20 rounded-2xl bg-gradient-to-br from-[var(--color-primary)]/20 to-transparent border border-[var(--color-primary)]/15 flex items-center justify-center">
               <img
-                            src={viagem.usuario.foto && viagem.usuario.foto.trim() !== "" ? viagem.usuario.foto : profileimg }
-                            alt={`Foto de ${viagem.usuario.nome}`}
-                            className="w-20 h-20  rounded-full border-4 border-[#0f0f1a] object-cover shadow-lg"
-                        />
+                src={viagem.usuario.foto && viagem.usuario.foto.trim() !== "" ? viagem.usuario.foto : profileimg}
+                alt={`Foto de ${viagem.usuario.nome}`}
+                className="w-20 h-20  rounded-full border-4 border-[#0f0f1a] object-cover shadow-lg"
+              />
             </div>
             <span className="absolute -bottom-1 -right-1 h-4 w-4 rounded-full border-2 border-[var(--color-background-card)] bg-[var(--color-success)]" />
           </div>
@@ -46,7 +46,7 @@ export default function CardViagem({ viagem, onReservar }: CardViagemProps) {
             <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[var(--color-background-subtle)] border border-[var(--color-stroke)] w-fit">
               <Car size={12} className="text-[var(--color-primary)] shrink-0" />
               <span className="text-[11px] font-semibold text-[var(--color-foreground-muted)] uppercase tracking-wider whitespace-nowrap">
-               {viagem.veiculo.marca} {viagem.veiculo.modelo} · {viagem.veiculo.cor_veiculo}
+                {viagem.veiculo.marca} {viagem.veiculo.modelo} · {viagem.veiculo.cor_veiculo}
               </span>
             </span>
           </div>
@@ -85,19 +85,19 @@ export default function CardViagem({ viagem, onReservar }: CardViagemProps) {
         </div>
       </div>
 
-      
-                    <div className="flex gap-3">
-                        <Link to={`/atualizarviagem/${viagem.id}`} className="w-full py-2 flex items-center rounded-full justify-center font-medium rf-sm
-                                    text-[var(--color-foreground-high)] hover:border hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition">
-                            Editar
-                        </Link>
 
-                        <Link to={`/deletarviagem/${viagem.id}`} className="w-full py-2 flex items-center justify-center font-medium rf-sm hover:border rounded-full hover:border-red-600
+      <div className="flex gap-3">
+        <Link to={`/atualizarviagem/${viagem.id}`} className="w-full py-2 flex items-center rounded-full justify-center font-medium rf-sm
+                                    text-[var(--color-foreground-high)] hover:border hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition">
+          Editar
+        </Link>
+
+        <Link to={`/deletarviagem/${viagem.id}`} className="w-full py-2 flex items-center justify-center font-medium rf-sm hover:border rounded-full hover:border-red-600
                                 text-white transition">
-                            Deletar
-                        </Link>
-                    </div>
-                
+          Deletar
+        </Link>
+      </div>
+
     </article>
   );
 }

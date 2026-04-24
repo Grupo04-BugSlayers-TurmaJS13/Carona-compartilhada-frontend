@@ -19,7 +19,7 @@ function DeletarViagem() {
 
 	async function buscarPorId(viagemId: string) {
 		try {
-			await buscar(`/viagens/${viagemId}`, setViagem, {
+			await buscar(`/deletarviagens/${viagemId}`, setViagem, {
 				headers: {
 					Authorization: token,
 				},
@@ -72,7 +72,7 @@ function DeletarViagem() {
 		<PageShell>
 			<div className="min-h-screen flex items-center justify-center bg-(--color-background) px-4">
 				<div className="w-full max-w-md bg-(--color-background-card) border border-(--color-stroke) rounded-2xl p-6 shadow-(--shadow-soft) text-center">
-					<h1 className="rf-2xl font-bold text-(--color-primary) mb-4">
+					<h1 className="text-3xl font-bold text-[var(--color-primary)] mb-4">
 						Deletar Viagem
 					</h1>
 

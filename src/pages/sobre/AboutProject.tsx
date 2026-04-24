@@ -72,7 +72,7 @@ export default function AboutProject() {
         />
       </div>
 
-      <main className="page">
+      <main className="page pt-20">
         <section className="hero">
           <div className="container">
             <div className="hero-inner">
@@ -457,7 +457,7 @@ export default function AboutProject() {
               <article className="stack-card reveal reveal-delay-1">
                 <div className="stack-card-glow" aria-hidden="true" />
                 <div className="stack-card-header">
-                  <div className="stack-icon">
+                  <div className="stack-icon m-4">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -471,7 +471,7 @@ export default function AboutProject() {
                   </div>
                   <h3 className="stack-title">Frontend</h3>
                 </div>
-                <div className="tags">
+                <div className="tags m-4">
                   {[
                     "React",
                     "TypeScript",
@@ -492,7 +492,7 @@ export default function AboutProject() {
               <article className="stack-card reveal reveal-delay-2">
                 <div className="stack-card-glow" aria-hidden="true" />
                 <div className="stack-card-header">
-                  <div className="stack-icon">
+                  <div className="stack-icon m-4">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -507,7 +507,7 @@ export default function AboutProject() {
                   </div>
                   <h3 className="stack-title">Backend e dados</h3>
                 </div>
-                <div className="tags">
+                <div className="tags m-4">
                   {["NestJS", "Node.js", "MySQL", "TypeORM", "Swagger"].map(
                     (tag) => (
                       <span key={tag} className="tag">
@@ -521,7 +521,7 @@ export default function AboutProject() {
               <article className="stack-card reveal reveal-delay-3">
                 <div className="stack-card-glow" aria-hidden="true" />
                 <div className="stack-card-header">
-                  <div className="stack-icon">
+                  <div className="stack-icon m-4">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -534,7 +534,7 @@ export default function AboutProject() {
                   </div>
                   <h3 className="stack-title">Ferramentas</h3>
                 </div>
-                <div className="tags">
+                <div className="tags m-4">
                   {["GitHub", "Vercel", "VS Code", "Insomnia"].map((tag) => (
                     <span key={tag} className="tag">
                       {tag}

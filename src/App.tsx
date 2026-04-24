@@ -15,6 +15,8 @@ import Perfil from "./pages/perfil/Perfil";
 import AtualizarPerfil from "./pages/perfil/AtualizarPerfil";
 import ListarUsuarios from "./components/usuarios/listausuario/ListarUsuarios";
 import Viagens from "./components/viagens/listarviagens/Viagens";
+import FormViagem from "./components/viagens/formviagem/FormViagem";
+import DeletarViagem from "./components/viagens/deletarviagem/DeletarViagem";
 
 
 function App() {
@@ -38,7 +40,10 @@ function App() {
             <Route path="/deletarveiculo/:id" element={<DeletarVeiculos />} />
             <Route path="/sobre" element={<AboutProject />} />
             <Route path="/sobrenos" element={<AboutUs />} />
-            <Route path="/viagens" element={<Viagens />} />
+            <Route path="/listarviagens" element={<Viagens />} />
+            <Route path="/cadastrarviagens" element={<FormViagem />} />
+            <Route path="/atualizarviagens/:id" element={<FormViagem />} />
+            <Route path="/deletarviagens/:id" element={<DeletarViagem />} />
           </Routes>
           <Footer />
         </BrowserRouter>
