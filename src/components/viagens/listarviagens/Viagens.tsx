@@ -11,14 +11,15 @@ import {
   Calendar,
   X,
 } from "lucide-react";
-import type Viagem from "../../models/Viagem";
-import CardViagem from "../../components/cardviagem/CardViagem";
-import { ToastAlerta } from "../../utils/ToastAlerta";
-import { AuthContext } from "../../contexts/AuthContext";
-import type Usuario from "../../models/Usuario";
-import { buscar } from "../../services/Service";
+import type Viagem from "../../../models/Viagem";
+
+import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { AuthContext } from "../../../contexts/AuthContext";
+import type Usuario from "../../../models/Usuario";
+import { buscar } from "../../../services/Service";
 import { SyncLoader } from "react-spinners";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CardViagem from "../cardviagem/CardViagem";
 
 // const viagensMock = [
 //   {
@@ -327,6 +328,7 @@ export default function Viagens() {
             Compartilhe os custos da sua viagem e ajude a comunidade local de
             forma segura e prática.
           </p>
+          <Link to="/cadastrarviagem">
           <button className="group inline-flex items-center gap-4 px-12 py-5 rounded-2xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] active:scale-[0.98] text-black font-black text-base tracking-tight transition-all shadow-[var(--shadow-bip)] hover:shadow-[0_20px_50px_-10px_rgba(132,204,22,0.4)]">
             <Plus
               size={20}
@@ -335,6 +337,7 @@ export default function Viagens() {
             />
             Oferecer Carona
           </button>
+          </Link>
         </section>
       </main>
     </div>

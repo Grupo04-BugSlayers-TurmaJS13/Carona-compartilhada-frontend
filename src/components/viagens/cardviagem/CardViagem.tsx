@@ -1,7 +1,8 @@
-import { Car, ArrowRight, User } from "lucide-react";
-import type Usuario from "../../models/Usuario";
-import type Veiculo from "../../models/Veiculo";
-import profileimg from "../../assets/profileimg.jpg"
+import { Car, ArrowRight } from "lucide-react";
+import profileimg from "../../../assets/profileimg.jpg"
+import type Usuario from "../../../models/Usuario";
+import type Veiculo from "../../../models/Veiculo";
+import { Link } from "react-router-dom";
 
 
 interface Viagem {
@@ -84,13 +85,19 @@ export default function CardViagem({ viagem, onReservar }: CardViagemProps) {
         </div>
       </div>
 
-      <button
-        // onClick={() => onReservar(viagem)}
-        className="group/btn relative w-full flex items-center justify-center gap-3 py-4 rounded-2xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] active:scale-[0.98] text-black font-black text-base tracking-tight transition-all duration-200 shadow-[0_8px_24px_-8px_rgba(132,204,22,0.4)] hover:shadow-[0_12px_32px_-8px_rgba(132,204,22,0.55)]"
-      >
-        Solicitar Carona
-        <ArrowRight size={18} strokeWidth={2.5} className="transition-transform duration-200 group-hover/btn:translate-x-1" />
-      </button>
+      
+                    <div className="flex gap-3">
+                        <Link to={`/atualizarviagem/${viagem.id}`} className="w-full py-2 flex items-center rounded-full justify-center font-medium rf-sm
+                                    text-[var(--color-foreground-high)] hover:border hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition">
+                            Editar
+                        </Link>
+
+                        <Link to={`/deletarviagem/${viagem.id}`} className="w-full py-2 flex items-center justify-center font-medium rf-sm hover:border rounded-full hover:border-red-600
+                                text-white transition">
+                            Deletar
+                        </Link>
+                    </div>
+                
     </article>
   );
 }
