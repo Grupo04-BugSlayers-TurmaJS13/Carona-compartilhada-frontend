@@ -75,7 +75,7 @@ function Perfil() {
 
     return (
         <PageShell>
-            <section className="min-h-screen text-white font-sans pb-30">
+            <section className="min-h-screen pb-20">
                 <div className="h-48 md:h-64 w-full bg-gradient-to-r from-(--color-background) via-(--color-primary-dark) to-(--color-primary) relative">
                     <div className="absolute left-1/2 md:left-20 transform -translate-x-1/2 md:translate-x-0 -bottom-15">
                         <img

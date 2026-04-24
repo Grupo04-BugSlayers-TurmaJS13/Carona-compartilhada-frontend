@@ -121,7 +121,7 @@ function AtualizarPerfil() {
         <>
             <PageShell>
 
-                <section className="min-h-screen text-white flex items-center justify-center p-4 py-30">
+                <section className="min-h-screen text-white flex items-center justify-center p-4 mt-20">
 
                     <form
                         onSubmit={atualizarUsuario}
@@ -157,7 +157,7 @@ function AtualizarPerfil() {
                                 value={user.foto}
                                 onChange={atualizarEstado}
                                 className="w-full p-3 rounded-xl bg-[#0f0f1a] border border-gray-800 text-white
-            focus:border-purple-500 focus:ring-2 focus:ring-(--color-primary) transition"
+            focus:border-primary-ligth focus:ring-2 focus:ring-(--color-primary) transition"
                             />
                         </div>
 
@@ -171,7 +171,7 @@ function AtualizarPerfil() {
                                 value={user.nome}
                                 onChange={atualizarEstado}
                                 className="w-full p-3 rounded-xl bg-[#0f0f1a] border border-gray-800 text-white
-            focus:border-purple-500 focus:ring-2 focus:ring-(--color-primary) transition"
+            focus:border-primary-ligth focus:ring-2 focus:ring-(--color-primary) transition"
                             />
 
                             {user.nome?.length > 0 && user.nome?.length < 3 && (
@@ -198,7 +198,7 @@ function AtualizarPerfil() {
                                 value={user.usuario}
                                 disabled
                                 className="w-full p-3 rounded-xl bg-[#0f0f1a] border border-gray-800 text-white
-            focus:border-purple-500 focus:ring-2 focus:ring-(--color-primary) transition"
+            focus:border-primary-ligth focus:ring-2 focus:ring-(--color-primary) transition"
                             />
                         </div>
 
@@ -212,7 +212,7 @@ function AtualizarPerfil() {
                                 value={user.senha || ""}
                                 onChange={atualizarEstado}
                                 className="w-full p-3 rounded-xl bg-[#0f0f1a] border border-gray-800 text-white
-            focus:border-purple-500 focus:ring-2 focus:ring-(--color-primary) transition"
+            focus:border-primary-ligth focus:ring-2 focus:ring-(--color-primary) transition"
                             />
                             {user.senha?.length > 0 && user.senha?.length < 8 && (
                                 <span className="text-red-400 text-xs flex items-center p-2 gap-2">
@@ -237,7 +237,7 @@ function AtualizarPerfil() {
                                 value={confirmarSenha}
                                 onChange={handleConfirmarSenha}
                                 className="w-full p-3 rounded-xl bg-[#0f0f1a] border border-gray-800 text-white
-            focus:border-purple-500 focus:ring-2 focus:ring-(--color-primary) transition"
+            focus:border-primary-ligth focus:ring-2 focus:ring-(--color-primary) transition"
                             />
 
                             {confirmarSenha.length > 0 && !senhasIguais && (
@@ -255,13 +255,11 @@ function AtualizarPerfil() {
                         </div>
 
                         <div className="flex justify-between items-center m-6 gap-4">
-                            <div className="flex justify-between items-center mx-6 gap-4 w-full bg-(--color-primary) hover:bg-(--color-primary-dark) rounded-lg transition">
-                            <motion.button
+                            <div className="flex justify-between items-center gap-4 w-full hover:border-1 hover:border-[var(--color-primary)] rounded-lg transition">
+                            <button
                                 type="submit"
                                 disabled={isLoading}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="w-full py-3 rounded-lg bg-[var(--color-primary)] text-white font-semibold hover:bg-[var(--color-primary-hover)] transition"
+                                className="w-full py-3 rounded-lg text-white font-semibold border-1 border-[var(--color-primary-hover)] transition"
                             >
                                 <span className="" >
                                 {isLoading ? (
@@ -270,18 +268,16 @@ function AtualizarPerfil() {
                                     "Atualizar"
                                 )}
                                 </span>
-                            </motion.button>
+                            </button>
                                 </div>
-                                <div className="flex justify-between items-center gap-4 w-full mx-6 bg-red-400 hover:bg-red-700 rounded-lg transition"> 
-                            <motion.button
+                                <div className="flex justify-between items-center gap-4 w-full hover:border-1 hover:border-red-700 rounded-lg transition"> 
+                            <button
                                 type="button"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
                                 onClick={retornar}
                                 className="w-full py-3 rounded-lg bg-gray-700 hover:bg-gray-600 transition text-white font-semibold"
                             >
                                 Cancelar
-                            </motion.button>
+                            </button>
                             </div>
                         </div>
                     </form>
