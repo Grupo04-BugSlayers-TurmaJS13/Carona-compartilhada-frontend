@@ -7,9 +7,11 @@ import Diferencial from "../../components/diferencial/Diferencial"
 import MapaPreview from "../../components/mapapreview/MapaPreview"
 import Metricas from "../../components/metricas/Metricas"
 import VeiculosPreview from "../../components/veiculospreview/VeiculosPreview"
+import { AuthContext } from "../../contexts/AuthContext"
+import { useContext } from "react"
 
 function Home() {
-
+    const {  handleLogout } = useContext(AuthContext)
     return (
         <>
             <PageShell>
@@ -34,8 +36,9 @@ function Home() {
                             Entre agora no BipBip e comece a compartilhar caronas de forma rápida, segura e sustentável.
                         </p>
 
-                        <Link to="/login">
-                            <button className="px-8 py-3 rounded-full font-semibold  bg-[var(--color-primary)] text-black
+                        <Link to="/">
+                            <button onClick={handleLogout}
+                            className="px-8 py-3 rounded-full font-semibold  bg-[var(--color-primary)] text-black
                                 hover:bg-[var(--color-primary-light)] shadow-[var(--shadow-bip)] hover:scale-105 transition duration-300">
                                 Entrar no BipBip
                             </button>

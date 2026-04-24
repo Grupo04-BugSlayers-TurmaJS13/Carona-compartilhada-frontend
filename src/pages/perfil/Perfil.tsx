@@ -10,6 +10,7 @@ import { FaPencil } from "react-icons/fa6"
 import { SyncLoader } from "react-spinners"
 import type Viagem from "../../models/Viagem"
 import { PageShell } from "../../components/about/AboutShared"
+import CardViagem from "../../components/cardviagem/CardViagem"
 
 
 function Perfil() {
@@ -135,7 +136,7 @@ function Perfil() {
                              : (
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                                     {minhasViagens.map((viagem) => (
-                                        <h1 key={viagem.id} >{viagem.destino}</h1>
+                                        <CardViagem key={viagem.id} viagem={viagem} />
                                     ))}
                                 </div>
                             ) 

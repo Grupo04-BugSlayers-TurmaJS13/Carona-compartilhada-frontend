@@ -1,20 +1,19 @@
 import { UserIcon } from "@phosphor-icons/react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaCar, FaSignOutAlt, FaUser } from "react-icons/fa";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { GoHome, GoProjectRoadmap } from "react-icons/go";
 import { HiMenu, HiX } from "react-icons/hi";
 import { RoadIcon } from "lucide-react";
 import { FaPeopleGroup } from "react-icons/fa6";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
   const navigate = useNavigate();
   const [menuAberto, setMenuAberto] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  function logout() {
-    navigate("/");
-  }
+  const {  handleLogout } = useContext(AuthContext)
 
   function fecharMenu() {
     setMenuAberto(false);
@@ -152,7 +151,7 @@ function Navbar() {
             {/* SAIR */}
             <Link
               to="/login"
-              onClick={logout}
+              onClick={handleLogout}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -237,7 +236,7 @@ function Navbar() {
               <Link
                 to="/login"
                 onClick={() => {
-                  logout();
+                  handleLogout();
                   fecharMenu();
                 }}
                 className="flex items-center justify-center gap-2

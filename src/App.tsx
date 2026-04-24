@@ -16,14 +16,17 @@ import Perfil from "./pages/perfil/Perfil";
 import AtualizarPerfil from "./pages/perfil/AtualizarPerfil";
 import ListarUsuarios from "./components/usuarios/listausuario/ListarUsuarios";
 
+
 function App() {
   return (
     <>
-      <ToastContainer />
+    <ToastContainer className="p-0 m-0" />
       <AuthProvider>
+        
         <BrowserRouter>
           <Navbar />
-          <Routes>
+          <div className="min-h-[80vh]">
+            <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastrar" element={<Cadastro />} />
@@ -39,16 +42,13 @@ function App() {
             <Route path="/sobre" element={<AboutProject />} />
             <Route path="/sobrenos" element={<AboutUs />} />
             <Route path="/viagens" element={<Viagens />} />
-          </Routes>
+            </Routes>
+          </div>
           <Footer />
         </BrowserRouter>
       </AuthProvider>
     </>
-  )
+  );
 }
 
-export default App
-
-
-
-
+export default App;
