@@ -15,8 +15,6 @@ import Perfil from "./pages/perfil/Perfil";
 import AtualizarPerfil from "./pages/perfil/AtualizarPerfil";
 import ListarUsuarios from "./components/usuarios/listausuario/ListarUsuarios";
 import Viagens from "./components/viagens/listarviagens/Viagens";
-import FormViagem from "./components/viagens/formviagem/FormViagem";
-import DeletarViagem from "./components/viagens/deletarviagem/DeletarViagem";
 
 
 function App() {

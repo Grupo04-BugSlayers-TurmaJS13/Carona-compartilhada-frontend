@@ -1,5 +1,5 @@
 import { UserIcon } from "@phosphor-icons/react";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 import { FaCar, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { useState, useEffect, useRef, useContext } from "react";
 import { GoHome, GoProjectRoadmap } from "react-icons/go";
@@ -9,7 +9,7 @@ import { FaPeopleGroup } from "react-icons/fa6";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [menuAberto, setMenuAberto] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
