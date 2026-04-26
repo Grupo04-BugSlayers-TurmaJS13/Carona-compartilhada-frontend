@@ -7,27 +7,34 @@ import {
     useMap
 } from "react-leaflet";
 
-function MapController({ center, zoom }: { center: [number, number]; zoom: number }) {
+function FixMap() {
     const map = useMap();
 
     useEffect(() => {
-        map.setView(center, zoom);
-    }, [center, zoom, map]);
+        const timer = setTimeout(() => {
+            map.invalidateSize()
+        }, 300)
+
+        return () => clearTimeout(timer)
+    }, [map])
+
+    return null
+}
+
+function RecenterMap({ position }: { position: [number, number] }) {
+    const map = useMap()
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            map.invalidateSize();
-        }, 300);
-        return () => clearTimeout(timer);
-    }, [map]);
+        map.setView(position)
+    }, [position, map])
 
-    return null;
+    return null
 }
 
 function MapaPreview() {
     const [posicaoUsuario, setPosicaoUsuario] = useState<[number, number] | null>(null);
 
-    const posicoes = [
+    const posicoes: { id: number; nome: string; coords: [number, number] }[] = [
         { id: 1, nome: "Caronas no Centro", coords: [-22.9068, -43.1729] },
         { id: 2, nome: "Caronas em Copacabana", coords: [-22.9711, -43.1822] },
         { id: 3, nome: "Caronas na Barra", coords: [-23.0, -43.3656] },
@@ -49,44 +56,40 @@ function MapaPreview() {
 
     if (!posicaoUsuario) {
         return (
-            <section className="w-full py-10 text-center text-(--color-foreground-muted)">
+            <section className="w-full py-10 text-center text-[var(--color-foreground-muted)]">
                 Carregando mapa...
             </section>
         );
     }
 
     return (
-        <section className="w-full py-8 px-6 md:px-16 bg-(--color-background)">
-
-            {/* HEADER */}
+        <section className="w-full py-8 px-6 md:px-16 bg-[var(--color-background)]">
             <div className="text-center mb-14">
-                <h2 className="rf-3xl md:text-4xl font-bold text-(--color-primary)">
+                <h2 className="rf-3xl md:text-4xl font-bold text-[var(--color-primary)]">
                     Caronas perto de você
                 </h2>
-                <p className="text-(--color-foreground-muted) mt-3 m-auto">
+                <p className="text-[var(--color-foreground-muted)] mt-3 m-auto">
                     Veja rotas e pontos disponíveis em tempo real
                 </p>
             </div>
-
-            {/* MAPA */}
             <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden
-                border border-(--color-stroke) shadow-(--shadow-soft) h-125 md:h-150">
+                border border-[var(--color-stroke)] shadow-[var(--shadow-soft)] h-[500px] md:h-[600px]">
 
                 <MapContainer
-                    className="w-full h-full"
+                    center={posicaoUsuario}
+                    zoom={13}
+                    className="w-full h-full" 
                 >
-                    <MapController center={posicaoUsuario} zoom={13} />
+                    <FixMap />
+                    <RecenterMap position={posicaoUsuario} />
 
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        attribution="&copy; OpenStreetMap"
                     />
-
-                    {/* Usuário */}
                     <Marker position={posicaoUsuario}>
                         <Popup>Você está aqui</Popup>
                     </Marker>
-
-                    {/* Pontos */}
                     {posicoes.map((p) => (
                         <Marker key={p.id} position={p.coords}>
                             <Popup>{p.nome}</Popup>
