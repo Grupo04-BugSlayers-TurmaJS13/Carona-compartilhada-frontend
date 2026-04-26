@@ -17,6 +17,7 @@ import FormViagem from "./components/viagens/formviagem/FormViagem";
 import DeletarViagem from "./components/viagens/deletarviagem/DeletarViagem";
 import AboutProject from "./pages/sobre/AboutProject";
 import AboutUs from "./pages/sobre/AboutUs";
+import ContratarViagem from "./components/viagens/contratarviagem/ContratarViagem";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
           <Route path="/cadastrarviagens" element={<FormViagem />} />
           <Route path="/atualizarviagens/:id" element={<FormViagem />} />
           <Route path="/deletarviagens/:id" element={<DeletarViagem />} />
+          <Route path="/contratarviagem/:id" element={<ContratarViagem />} />
           <Route path="/sobre" element={<AboutProject />} />
           <Route path="/sobrenos" element={<AboutUs />} />
         </Routes>

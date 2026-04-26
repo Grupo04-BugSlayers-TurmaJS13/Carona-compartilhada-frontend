@@ -3,6 +3,8 @@ import profileimg from "../../../assets/profileimg.jpg";
 import type Usuario from "../../../models/Usuario";
 import type Veiculo from "../../../models/Veiculo";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
 
 interface Viagem {
     id: number; embarque: string; destino: string; valor: number;
@@ -19,7 +21,11 @@ const statusMap: Record<string, { label: string; color: string }> = {
 };
 
 export default function CardViagem({ viagem }: CardViagemProps) {
+    const { usuario: usuarioLogado } = useContext(AuthContext);
     const badge = statusMap[viagem.status?.toUpperCase()] ?? statusMap["SOLICITADA"];
+    
+    // Verifica se o usuário logado é o dono da viagem
+    const isDonoViagem = usuarioLogado.id === viagem.usuario.id;
 
     return (
         <article className="group relative flex flex-col gap-5 sm:gap-8 overflow-hidden rounded-2xl sm:rounded-3xl border border-[var(--color-stroke)] bg-[var(--color-background-card)] p-4 sm:p-8 transition-all duration-500 hover:border-[var(--color-primary-dark)] hover:shadow-[var(--shadow-bip)]">
@@ -92,18 +98,29 @@ export default function CardViagem({ viagem }: CardViagemProps) {
             </div>
 
             <div className="flex gap-2 sm:gap-3">
-                <Link
-                    to={`/atualizarviagens/${viagem.id}`}
-                    className="w-full py-2 sm:py-2.5 flex items-center rounded-full justify-center font-medium text-sm text-[var(--color-foreground-high)] hover:border hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition"
-                >
-                    Editar
-                </Link>
-                <Link
-                    to={`/deletarviagens/${viagem.id}`}
-                    className="w-full py-2 sm:py-2.5 flex items-center justify-center font-medium text-sm hover:border rounded-full hover:border-red-600 text-white transition"
-                >
-                    Deletar
-                </Link>
+                {isDonoViagem ? (
+                    <>
+                        <Link
+                            to={`/atualizarviagens/${viagem.id}`}
+                            className="w-full py-2 sm:py-2.5 flex items-center rounded-full justify-center font-medium text-sm text-[var(--color-foreground-high)] hover:border hover:border-[var(--color-primary)] hover:text-[var(--color-primary)] transition"
+                        >
+                            Editar
+                        </Link>
+                        <Link
+                            to={`/deletarviagens/${viagem.id}`}
+                            className="w-full py-2 sm:py-2.5 flex items-center justify-center font-medium text-sm hover:border rounded-full hover:border-red-600 text-white transition"
+                        >
+                            Deletar
+                        </Link>
+                    </>
+                ) : (
+                    <Link
+                        to={`/contratarviagem/${viagem.id}`}
+                        className="w-full py-2 sm:py-2.5 flex items-center rounded-full justify-center font-medium text-sm hover:border-1 hover:border-[var(--color-primary-light)] transition"
+                    >
+                        Contratar Viagem
+                    </Link>
+                )}
             </div>
         </article>
     );

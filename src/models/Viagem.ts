@@ -15,4 +15,5 @@ export default interface Viagem {
     valor: number;
     veiculo: Veiculo;
     usuario: Usuario;
+    usuarioContratante?: Usuario;
 }

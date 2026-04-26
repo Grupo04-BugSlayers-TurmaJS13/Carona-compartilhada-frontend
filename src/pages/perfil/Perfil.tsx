@@ -5,8 +5,8 @@ import type Usuario from "../../models/Usuario"
 import { ToastAlerta } from "../../utils/ToastAlerta"
 import { buscar } from "../../services/Service"
 import { AuthContext } from "../../contexts/AuthContext"
-import { FaTrophy, FaSadTear } from "react-icons/fa"
-import { FaPencil } from "react-icons/fa6"
+import { FaTrophy, FaSadTear, FaCar } from "react-icons/fa"
+import { FaPencil, FaTicket } from "react-icons/fa6"
 import { SyncLoader } from "react-spinners"
 import type Viagem from "../../models/Viagem"
 import { PageShell } from "../../components/about/AboutShared"
@@ -27,8 +27,14 @@ function Perfil() {
 
     const isOwner = usuarioLogado?.id === usuario?.id
 
-    const minhasViagens = viagens.filter(
+    // Viagens oferecidas (onde o usuário é o motorista)
+    const viagensOferecidas = viagens.filter(
         (viagem) => viagem.usuario?.id === usuario?.id
+    )
+
+    // Viagens contratadas (onde o usuário é o passageiro)
+    const viagensContratadas = viagens.filter(
+        (viagem) => viagem.usuarioContratante?.id === usuario?.id
     )
 
     useEffect(() => {
@@ -129,19 +135,49 @@ function Perfil() {
                                 <FaTrophy /> Minhas Viagens
                             </h3>
 
-                            {minhasViagens.length === 0 ? (
-                                <p className="text-gray-400 flex items-center gap-2">
-                                    Você ainda não tem nenhuma viagem <FaSadTear size={20} />
-                                </p>
-                            )
-                             : (
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
-                                    {minhasViagens.map((viagem) => (
-                                        <CardViagem key={viagem.id} viagem={viagem} />
-                                    ))}
-                                </div>
-                            ) 
-                            }
+                            {/* Viagens Oferecidas */}
+                            <div className="mb-10">
+                                <h4 className="text-xl font-semibold text-(--color-foreground-high) mb-4 flex items-center gap-2">
+                                    <FaCar size={30} /> Viagens Oferecidas
+                                    <span className="text-sm text-(--color-foreground-muted)">
+                                        ({viagensOferecidas.length})
+                                    </span>
+                                </h4>
+
+                                {viagensOferecidas.length === 0 ? (
+                                    <p className="text-gray-400 flex items-center gap-2">
+                                        Você ainda não ofereceu nenhuma viagem <FaSadTear size={20} />
+                                    </p>
+                                ) : (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                                        {viagensOferecidas.map((viagem) => (
+                                            <CardViagem key={viagem.id} viagem={viagem} />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Viagens Contratadas */}
+                            <div>
+                                <h4 className="text-xl font-semibold text-(--color-foreground-high) mb-4 flex items-center gap-2">
+                                    <FaTicket size={30} /> Viagens Contratadas
+                                    <span className="text-sm text-(--color-foreground-muted)">
+                                        ({viagensContratadas.length})
+                                    </span>
+                                </h4>
+
+                                {viagensContratadas.length === 0 ? (
+                                    <p className="text-gray-400 flex items-center gap-2">
+                                        Você ainda não contratou nenhuma viagem <FaSadTear size={20} />
+                                    </p>
+                                ) : (
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+                                        {viagensContratadas.map((viagem) => (
+                                            <CardViagem key={viagem.id} viagem={viagem} />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>

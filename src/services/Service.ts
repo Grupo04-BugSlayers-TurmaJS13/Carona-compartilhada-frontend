@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:4000"
+    baseURL: "https://carona-compartilhada-backend.onrender.com"
 });
 
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
@@ -38,3 +38,7 @@ export const atualizar = async (url: string, dados: Object, setDados: Function, 
 export const deletar = async (url: string, header: Object) => {
     await api.delete(url, header);
 };
+
+export const contratar = async (url: string, dados: object, header: Object) => {
+    await api.put(url, dados, header);
+}

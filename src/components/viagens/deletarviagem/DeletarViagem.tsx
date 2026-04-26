@@ -89,7 +89,7 @@ function DeletarViagem() {
 					</p>
 
 					<div className="flex gap-8 items-center justify-center ">
-                        <div className=" w-30 flex justify-center items-center border border-(--color-primary) rounded-full">
+                        <div className=" w-full flex justify-center items-center border border-(--color-primary) rounded-full">
 						<button
 							onClick={retornar}
 							className="w-1/2 py-3 rounded-lg font-bold bg-(--color-background-subtle) text-white hover:bg-gray-600 transition"
@@ -99,7 +99,7 @@ function DeletarViagem() {
 						</button>
                         </div>
 
-                        <div className=" w-30 flex justify-center items-center border border-red-600 rounded-full">
+                        <div className=" w-full flex justify-center items-center border border-red-600 rounded-full">
 						<button
 							onClick={deletarViagem}
 							disabled={isLoading}
