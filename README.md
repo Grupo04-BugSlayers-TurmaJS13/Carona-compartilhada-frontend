@@ -1,73 +1,143 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="https://github.com/Grupo04-BugSlayers-TurmaJS13/Carona-compartilhada-frontend/blob/main/public/logo.png" alt="BipBip Logo" width="160"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  ##  BIPBIP — Frontend
 
-Currently, two official plugins are available:
+  **Carona elétrica, inteligente e sustentável**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+  ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+  ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
-## React Compiler
+</div>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📋 Sobre o Projeto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+O **BipBip** é uma plataforma de carona compartilhada focada em **mobilidade urbana sustentável**. A proposta é conectar pessoas que já realizam deslocamentos diários — como para o trabalho ou a faculdade — aproveitando trajetos em comum com veículos elétricos.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este repositório contém o **frontend** da aplicação, desenvolvido em React com TypeScript e integrado à [API BipBip](https://github.com/Grupo04-BugSlayers-TurmaJS13/Carona-Compartilhada-backend).
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+> Projeto desenvolvido em grupo durante o Bootcamp Fullstack JavaScript da Generation  — **Squad BugSlayers | TurmaJS13**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## ✨ Funcionalidades
+
+- 🔐 Autenticação de usuários (login e cadastro)
+- 🚘 Cadastro e gerenciamento de veículos elétricos
+- 🗺️ Criação e busca de viagens com origem e destino
+- 📅 Agendamento de rotas fixas e recorrentes
+- 👤 Perfis de motorista e passageiro
+- 📱 Interface responsiva e adaptada para mobile
+
+---
+
+## 🛠️ Stack
+
+| Tecnologia | Uso |
+|---|---|
+| **React** | Biblioteca principal de UI |
+| **TypeScript** | Tipagem estática |
+| **Tailwind CSS** | Estilização utilitária |
+| **Vite** | Build e bundler |
+| **React Router** | Navegação entre páginas |
+| **Axios** | Comunicação com a API |
+
+---
+
+## 🗂️ Estrutura do Projeto
+
+```
+src/
+├── assets/          # Imagens e ícones
+├── components/      # Componentes reutilizáveis
+├── pages/           # Páginas da aplicação
+├── services/        # Integração com a API
+├── routes/          # Configuração de rotas
+├── types/           # Interfaces e tipos TypeScript
+└── main.tsx         # Ponto de entrada
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Como Rodar Localmente
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Pré-requisitos
+
+- Node.js >= 18
+- npm ou yarn
+- API do BipBip rodando localmente ([ver repositório backend](https://github.com/Grupo04-BugSlayers-TurmaJS13/Carona-Compartilhada-backend))
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/Grupo04-BugSlayers-TurmaJS13/Carona-Compartilhada-frontend.git
+
+# Entre na pasta
+cd Carona-Compartilhada-frontend
+
+# Instale as dependências
+npm install
 ```
+
+### Variáveis de Ambiente
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+### Executando
+
+```bash
+# Modo desenvolvimento
+npm run dev
+
+# Build de produção
+npm run build
+```
+
+A aplicação estará disponível em `http://localhost:5173`
+
+---
+
+## 🗄️ Integração com o Backend
+
+Este frontend consome a API REST do BipBip. Os principais endpoints utilizados são:
+
+| Módulo | Endpoint Base |
+|---|---|
+| Autenticação | `/auth` |
+| Usuários | `/usuarios` |
+| Viagens | `/viagens` |
+| Veículos | `/veiculos` |
+
+📎 [Repositório do Backend](https://github.com/Grupo04-BugSlayers-TurmaJS13/Carona-Compartilhada-backend)
+
+---
+
+## 🔮 Implementações Futuras
+
+- [ ] Modo exclusivo para mulheres
+- [ ] Rastreamento em tempo real
+- [ ] Sugestão automática de rotas inteligentes
+- [ ] Notificações push
+- [ ] Avaliação de motoristas e passageiros
+
+---
+
+### 👥 Squad BugSlayers
+
+Desenvolvido  pela Squad BugSlayers — TurmaJS13
+
+
+---
+
+### 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](./LICENSE) para mais detalhes.
