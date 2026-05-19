@@ -1,4 +1,9 @@
 <img width="1280" height="320" alt="banner github" src="https://github.com/user-attachments/assets/edeb67f1-7e9f-434b-877e-0598ee3930ce" />
+
+
+---
+
+
 <div align="center">
  
 
@@ -8,8 +13,6 @@
   ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 
 </div>
-
----
 
 ## 📋 Sobre o Projeto
 
@@ -138,7 +141,7 @@ Este frontend consome a API REST do BipBip. Os principais endpoints utilizados s
 
 ### 👥 Squad BugSlayers
 
-Desenvolvido  pela Squad BugSlayers — TurmaJS13
+Desenvolvido pela Squad BugSlayers — TurmaJS13
 
 
 ---
