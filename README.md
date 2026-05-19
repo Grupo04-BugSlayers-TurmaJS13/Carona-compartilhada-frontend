@@ -1,9 +1,6 @@
+<img width="1280" height="320" alt="banner github" src="https://github.com/user-attachments/assets/edeb67f1-7e9f-434b-877e-0598ee3930ce" />
 <div align="center">
-  <img src="https://github.com/Grupo04-BugSlayers-TurmaJS13/Carona-compartilhada-frontend/blob/main/public/logo.png" alt="BipBip Logo" width="160"/>
-
-  ##  BIPBIP — Frontend
-
-  **Carona elétrica, inteligente e sustentável**
+ 
 
   ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -23,6 +20,14 @@ Este repositório contém o **frontend** da aplicação, desenvolvido em React c
 > Projeto desenvolvido em grupo durante o Bootcamp Fullstack JavaScript da Generation  — **Squad BugSlayers | TurmaJS13**
 
 ---
+## 📸 Preview
+
+<img width="600"  alt="bipbip-mock" src="https://github.com/user-attachments/assets/883b427f-4e10-46d7-b432-37227dedc575" />
+<img width="600" alt="bipbip-mockup-mobile" src="https://github.com/user-attachments/assets/af9e7468-3bbb-4eb9-ae46-0b3b1b3bbb2b" />
+
+
+--------
+
 
 ## ✨ Funcionalidades
 
