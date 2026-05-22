@@ -36,7 +36,7 @@ function Home() {
                             Entre agora no BipBip e comece a compartilhar caronas de forma rápida, segura e sustentável.
                         </p>
 
-                        <Link to="/">
+                        <Link to="/login">
                             <button onClick={handleLogout}
                             className="px-8 py-3 rounded-full font-semibold  bg-[var(--color-primary)] text-black
                                 hover:bg-[var(--color-primary-light)] shadow-[var(--shadow-bip)] hover:scale-105 transition duration-300">

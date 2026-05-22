@@ -37,7 +37,7 @@ function FormVeiculo() {
     useEffect(() => {
         if (token === "") {
             ToastAlerta("Você precisa estar logado!", "info");
-            navigate("/");
+            navigate("/login");
             return;
         }
         if (id) buscarVeiculoPorId(id);

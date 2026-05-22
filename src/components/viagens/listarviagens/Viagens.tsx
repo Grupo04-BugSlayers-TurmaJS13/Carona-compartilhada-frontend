@@ -26,13 +26,13 @@ export default function Viagens() {
   const [filterData, setFilterData] = useState("");
   const [applied, setApplied] = useState(false);
 
-  useEffect(() => {
-    if (!token) {
-      ToastAlerta("Você precisa estar logado!", "erro");
-      handleLogout();
-      navigate("/");
-    }
-  }, [token]);
+  // useEffect(() => {
+  //   if (!token) {
+  //     ToastAlerta("Você precisa estar logado!", "erro");
+  //     handleLogout();
+  //     navigate("/login");
+  //   }
+  // }, [token]);
 
   const buscarViagens = useCallback(async () => {
     try {
