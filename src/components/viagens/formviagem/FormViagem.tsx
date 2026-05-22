@@ -11,7 +11,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import type Viagem from "../../../models/Viagem";
 import type Veiculo from "../../../models/Veiculo";
-import type Usuario from "../../../models/Usuario";
+// import type Usuario from "../../../models/Usuario";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import { calcularRotaViagem } from "../../../utils/routeCalculator";
 import { AuthContext } from "../../../contexts/AuthContext";
@@ -55,7 +55,7 @@ function FormViagem() {
   const [routeFeedback, setRouteFeedback] = useState<string>("");
   const [viagem, setViagem] = useState<Viagem>(viagemInicial);
   const [veiculos, setVeiculos] = useState<Veiculo[]>([]);
-  const [usuarios, setUsuarios] = useState<Usuario[]>([]);
+  // const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
   async function buscarViagemPorId(viagemId: string) {
     await buscar(
@@ -84,9 +84,9 @@ function FormViagem() {
       setIsLoadingDados(true);
       await Promise.all([
         buscar("/veiculos", setVeiculos, { headers: { Authorization: token } }),
-        buscar("/usuarios/all", setUsuarios, {
-          headers: { Authorization: token },
-        }),
+        // buscar("/usuarios/all", setUsuarios, {
+        //   headers: { Authorization: token },
+        // }),
         id ? buscarViagemPorId(id) : Promise.resolve(),
       ]);
     } catch (error: any) {
