@@ -34,6 +34,10 @@ export default function Viagens() {
   //   }
   // }, [token]);
 
+  useEffect(() => {
+    buscarViagens();
+  }, [viagens.length])
+
   const buscarViagens = useCallback(async () => {
     try {
       setIsLoading(true);
