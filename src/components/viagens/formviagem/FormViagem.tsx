@@ -109,6 +109,23 @@ function FormViagem() {
     carregarDados();
   }, [token, id]);
 
+  // Preencher automaticamente o usuário da viagem com o usuário logado
+  useEffect(() => {
+    if ((viagem.usuario?.id ?? 0) === 0 && (usuario?.id ?? 0) !== 0) {
+      setViagem((current) => ({
+        ...current,
+        usuario: {
+          id: usuario.id,
+          nome: usuario.nome,
+          usuario: usuario.usuario,
+          senha: usuario.senha ?? "",
+          foto: usuario.foto ?? "",
+          viagens: [],
+        },
+      }));
+    }
+  }, [usuario, viagem.usuario?.id]);
+
   useEffect(() => {
     const embarque = viagem.embarque.trim();
     const destino = viagem.destino.trim();
@@ -453,19 +470,12 @@ function FormViagem() {
                 <label className="text-(--color-foreground-muted) px-2">
                   Usuário
                 </label>
-                <select
+                <input
                   name="usuario"
-                  value={viagem.usuario.id}
-                  onChange={atualizarUsuario}
+                  value={viagem.usuario.nome}
+                  readOnly
                   className="p-3 rounded-lg bg-(--color-background-subtle) border border-(--color-stroke) text-white"
-                >
-                  <option value={0}>Selecione um usuário</option>
-                  {usuarios.map((item) => (
-                    <option key={item.id} value={item.id}>
-                      {item.nome}
-                    </option>
-                  ))}
-                </select>
+                />
               </div>
             </div>
 
@@ -484,7 +494,7 @@ function FormViagem() {
               <button
                 type="button"
                 onClick={retornar}
-                className="w-1/2 py-3 rounded-lg font-bold bg-(--color-background-subtle) text-white hover:border-red-600 hover:border transition"
+                className="w-1/2 py-3 rounded-lg font-bold bg-(--color-background-subtle) text-white hover:border hover:border-red-600 transition"
               >
                 Cancelar
               </button>

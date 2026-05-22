@@ -63,7 +63,7 @@ body {
 
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
-button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+button { cursor: pointer; background: none; font: inherit; color: inherit; }
 /* p { max-width: 72ch; } */
 
 @keyframes aurora-drift {
