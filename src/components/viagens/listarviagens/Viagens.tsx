@@ -8,7 +8,7 @@ import { ToastAlerta } from "../../../utils/ToastAlerta";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
 import { SyncLoader } from "react-spinners";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CardViagem from "../cardviagem/CardViagem";
 import { PageShell } from "../../about/AboutShared";
 
@@ -233,12 +233,12 @@ export default function Viagens() {
             <p className="text-[var(--color-foreground-muted)] mb-10 font-medium leading-relaxed max-w-md mx-auto" style={{ fontSize: "var(--text-sm)" }}>
               Compartilhe os custos da sua viagem e ajude a comunidade local de forma segura e prática.
             </p>
-            <Link to="/cadastrarviagens">
-              <button className="group inline-flex items-center gap-4 px-12 py-5 rounded-2xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] active:scale-[0.98] text-black font-black text-base tracking-tight transition-all shadow-[var(--shadow-bip)] hover:shadow-[0_20px_50px_-10px_rgba(132,204,22,0.4)]">
+            {/* <Link to="/cadastrarviagens"> */}
+              <button onClick={()=> navigate("/cadastrarviagens")} className="group inline-flex items-center gap-4 px-12 py-5 rounded-2xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-light)] active:scale-[0.98] text-black font-black text-base tracking-tight transition-all shadow-[var(--shadow-bip)] hover:shadow-[0_20px_50px_-10px_rgba(132,204,22,0.4)]">
                 <Plus size={20} strokeWidth={3} className="transition-transform duration-300 group-hover:rotate-90" />
                 Oferecer Carona
               </button>
-            </Link>
+            {/* </Link> */}
           </section>
         </main>
       </div>
