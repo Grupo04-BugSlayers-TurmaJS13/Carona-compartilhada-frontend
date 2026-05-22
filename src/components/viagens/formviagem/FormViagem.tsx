@@ -206,13 +206,13 @@ function FormViagem() {
       setViagem((current) => ({ ...current, veiculo: veiculoSelecionado }));
   }
 
-  function atualizarUsuario(e: ChangeEvent<HTMLSelectElement>) {
-    const usuarioSelecionado = usuarios.find(
-      (u) => u.id === Number(e.target.value),
-    );
-    if (usuarioSelecionado)
-      setViagem((current) => ({ ...current, usuario: usuarioSelecionado }));
-  }
+  // function atualizarUsuario(e: ChangeEvent<HTMLSelectElement>) {
+  //   const usuarioSelecionado = usuarios.find(
+  //     (u) => u.id === Number(e.target.value),
+  //   );
+  //   if (usuarioSelecionado)
+  //     setViagem((current) => ({ ...current, usuario: usuarioSelecionado }));
+  // }
 
   function retornar() {
     navigate("/listarviagens");
