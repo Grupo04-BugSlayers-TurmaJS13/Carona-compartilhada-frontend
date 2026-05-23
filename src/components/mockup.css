@@ -88,6 +88,9 @@
   border-radius: var(--radius-2xl);
   padding: var(--space-6);
   transition: transform 0.3s var(--ease-out-expo);
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
 }
 .mockup-card:hover {
   transform: translateY(-6px);
@@ -290,4 +293,14 @@
   font-size: var(--rf-sm);
   color: rgba(163, 163, 163, 0.85);
   line-height: 1.7;
+}
+
+@media (max-width: 399px) {
+  .mockup-card {
+    padding: var(--space-3);
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
 }
