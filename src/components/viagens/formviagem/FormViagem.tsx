@@ -407,10 +407,10 @@ function FormViagem() {
 
               <div className="flex flex-col gap-2">
                 <label className="text-(--color-foreground-muted) px-2">
-                  Data do agendamento
+                  Data e Hora do agendamento
                 </label>
                 <input
-                  type="date"
+                  type="datetime-local"
                   name="dataAgendamento"
                   className="p-3 rounded-lg bg-(--color-background-subtle) border border-(--color-stroke) text-white focus:ring-2 focus:ring-(--color-primary)/30"
                   value={viagem.dataAgendamento ?? ""}

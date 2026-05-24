@@ -19,7 +19,7 @@ function DeletarViagem() {
 
 	async function buscarPorId(viagemId: string) {
 		try {
-			await buscar(`/deletarviagens/${viagemId}`, setViagem, {
+			await buscar(`/viagens/${viagemId}`, setViagem, {
 				headers: {
 					Authorization: token,
 				},
@@ -81,7 +81,7 @@ function DeletarViagem() {
 					</p>
 
 					<h2 className="rf-lg font-semibold text-white mb-2">
-						{viagem.embarque} - {viagem.destino}
+						Viagem de {viagem.embarque} para {viagem.destino}
 					</h2>
 
 					<p className="text-sm text-(--color-foreground-muted) mb-6">
